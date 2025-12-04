@@ -702,7 +702,13 @@ async def get_case_studies(
         if industry:
             query["industry"] = industry
         
-        cursor = db.case_studies.find(query).sort("created_at", -1)
+        cursor = db.case_studies.find(
+            query,
+            {"_id": 1, "title": 1, "slug": 1, "client_name": 1, "client_logo": 1,
+             "industry": 1, "challenge": 1, "solution": 1, "results": 1,
+             "technologies": 1, "featured_image": 1, "gallery_images": 1,
+             "published": 1, "created_at": 1, "updated_at": 1}
+        ).sort("created_at", -1).limit(100)
         case_studies = await cursor.to_list(length=100)
         
         return {
