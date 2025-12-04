@@ -349,9 +349,9 @@ class MIMAPITester:
             "title": "Test Case Study",
             "client_name": "Test Client",
             "industry": "Technology",
-            "challenge": "Test challenge",
-            "solution": "Test solution",
-            "results": "Test results",
+            "challenge": "Test challenge description with sufficient length to meet the minimum character requirement for validation purposes in automated testing.",
+            "solution": "Test solution description with sufficient length to meet the minimum character requirement for validation purposes in automated testing.",
+            "results": "Test results description with sufficient length to meet the minimum character requirement for validation purposes in automated testing.",
             "published": False
         }
         success1, response = self.run_test(
