@@ -637,12 +637,14 @@ body::after {
   grid-template-columns: repeat(auto-fill, minmax(min(300px, 100%), 1fr));
   gap: clamp(1.5rem, 3vw, 2rem);
   margin-top: clamp(2.5rem, 6vh, 4rem);
+  align-items: stretch;
 }
 
 .service-card-link {
   text-decoration: none;
   color: inherit;
   display: block;
+  height: 100%;
 }
 
 .service-card,
@@ -658,11 +660,13 @@ body::after {
   transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
   position: relative;
   height: 100%;
+  display: flex;
+  flex-direction: column;
 }
 
 .service-card:hover,
 .service-detail-card:hover {
-  transform: translateY(-8px) scale(1.02);
+  transform: translateY(-8px);
   background: rgba(255, 255, 255, 0.85);
   border-color: rgba(206, 22, 47, 0.3);
   box-shadow: 
