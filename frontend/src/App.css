@@ -227,19 +227,19 @@ body::after {
 
 .nav-link:hover {
   color: var(--glass-text);
-  background: rgba(255, 255, 255, 0.08);
+  background: rgba(30, 42, 68, 0.05);
 }
 
 .nav-link.active {
   color: var(--orange-primary);
-  background: rgba(229, 82, 39, 0.1);
+  background: rgba(229, 82, 39, 0.08);
   box-shadow: 0 0 20px var(--orange-glow);
 }
 
 .mobile-menu-button {
   display: block;
-  background: rgba(255, 255, 255, 0.08);
-  border: 1px solid rgba(255, 255, 255, 0.12);
+  background: rgba(30, 42, 68, 0.05);
+  border: 1px solid rgba(30, 42, 68, 0.1);
   border-radius: 12px;
   color: var(--glass-text);
   cursor: pointer;
@@ -248,7 +248,7 @@ body::after {
 }
 
 .mobile-menu-button:hover {
-  background: rgba(255, 255, 255, 0.12);
+  background: rgba(30, 42, 68, 0.1);
 }
 
 @media (min-width: 1024px) {
