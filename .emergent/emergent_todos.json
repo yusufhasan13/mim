@@ -5,27 +5,27 @@
   },
   {
     "content": "Phase 1 POC: Create backend POC endpoints for external data scraping (services & clients)",
-    "status": "in_progress"
+    "status": "completed"
   },
   {
     "content": "Phase 1 POC: Implement contact form endpoint with DB storage and email notification",
-    "status": "pending"
+    "status": "completed"
   },
   {
     "content": "Phase 1 POC: Create test_core.py to validate all POC functionality",
-    "status": "pending"
+    "status": "completed"
   },
   {
     "content": "Phase 1 POC: Fix and iterate until all POC tests pass",
-    "status": "pending"
+    "status": "completed"
   },
   {
     "content": "Phase 1 POC: All user stories covered and validated",
-    "status": "pending"
+    "status": "completed"
   },
   {
     "content": "Phase 2: Get design guidelines from design agent",
-    "status": "pending"
+    "status": "in_progress"
   },
   {
     "content": "Phase 2: Install required dependencies (backend & frontend)",
