@@ -14,6 +14,7 @@ const Navigation = () => {
     { path: '/case-studies', label: 'Case Studies' },
     { path: '/blog', label: 'Blog' },
     { path: '/testimonials', label: 'Testimonials' },
+    { path: '/careers', label: 'Careers' },
     { path: '/contact', label: 'Contact' },
   ];
 
