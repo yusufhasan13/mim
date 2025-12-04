@@ -242,8 +242,8 @@ class MIMAPITester:
         # Create blog post
         blog_data = {
             "title": "Test Blog Post",
-            "content": "This is a test blog post content.",
-            "excerpt": "Test excerpt",
+            "content": "This is a test blog post content with sufficient length to meet the minimum character requirement for validation. This content is being used for automated testing purposes.",
+            "excerpt": "Test excerpt for the blog post",
             "author": "Test Author",
             "category": "Technology",
             "tags": ["test", "automation"],
