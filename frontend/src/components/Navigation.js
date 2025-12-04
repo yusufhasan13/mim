@@ -23,8 +23,11 @@ const Navigation = () => {
     <nav className="navigation" data-testid="main-navigation">
       <div className="nav-container">
         <Link to="/" className="nav-logo" data-testid="nav-logo">
-          <span className="logo-text">MIM</span>
-          <span className="logo-subtitle">My Inbox Media®</span>
+          <img 
+            src="https://customer-assets.emergentagent.com/job_mim-evolution/artifacts/7ueszcuz_PHOTO-2025-11-24-16-49-11.jpg" 
+            alt="My Inbox Media®" 
+            className="nav-logo-img"
+          />
         </Link>
 
         {/* Desktop Menu */}
