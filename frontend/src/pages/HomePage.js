@@ -139,20 +139,22 @@ const HomePage = () => {
                   key={index}
                   initial={{ opacity: 0, y: 20 }}
                   whileInView={{ opacity: 1, y: 0 }}
-                  transition={{ delay: index * 0.1 }}
+                  transition={{ delay: index * 0.05 }}
                   viewport={{ once: true }}
                 >
                   <Tilt tiltMaxAngleX={10} tiltMaxAngleY={10}>
-                    <div className="service-card" data-testid={`service-card-${index}`}>
-                      <div className="service-icon">{service.icon}</div>
-                      <h3 className="service-title">{service.title}</h3>
-                      <p className="service-description">{service.description}</p>
-                      <ul className="service-features">
-                        {service.features.slice(0, 3).map((feature, idx) => (
-                          <li key={idx}>{feature}</li>
-                        ))}
-                      </ul>
-                    </div>
+                    <Link to="/services" className="service-card-link">
+                      <div className="service-card" data-testid={`service-card-${index}`}>
+                        <div className="service-icon">{service.icon}</div>
+                        <h3 className="service-title">{service.title}</h3>
+                        <p className="service-description">{service.description}</p>
+                        <ul className="service-features">
+                          {service.features.slice(0, 3).map((feature, idx) => (
+                            <li key={idx}>{feature}</li>
+                          ))}
+                        </ul>
+                      </div>
+                    </Link>
                   </Tilt>
                 </motion.div>
               ))}
