@@ -597,7 +597,12 @@ async def get_blog_posts(
         total = await db.blog_posts.count_documents(query)
         
         # Get posts
-        cursor = db.blog_posts.find(query).sort("created_at", -1).skip(skip).limit(limit)
+        cursor = db.blog_posts.find(
+            query,
+            {"_id": 1, "title": 1, "slug": 1, "excerpt": 1, "author": 1, 
+             "featured_image": 1, "category": 1, "tags": 1, "published": 1, 
+             "views": 1, "created_at": 1, "updated_at": 1}
+        ).sort("created_at", -1).skip(skip).limit(limit)
         posts = await cursor.to_list(length=limit)
         
         return {
