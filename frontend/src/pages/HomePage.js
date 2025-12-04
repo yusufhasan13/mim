@@ -5,7 +5,6 @@ import CountUp from 'react-countup';
 import Tilt from 'react-parallax-tilt';
 import { ArrowRight, Globe, Users, Building2, TrendingUp } from 'lucide-react';
 import { apiService } from '../utils/api';
-import InteractiveGlobe from '../components/InteractiveGlobe';
 
 const HomePage = () => {
   const [services, setServices] = useState([]);
