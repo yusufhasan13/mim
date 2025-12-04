@@ -626,16 +626,22 @@ body::after {
 
 /* Services */
 .services-preview-section {
-  padding: 6rem 0;
+  padding: clamp(4rem, 10vh, 6rem) 0;
   background: var(--bg-white);
 }
 
 .services-grid,
 .services-detail-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 2rem;
-  margin-top: 4rem;
+  grid-template-columns: repeat(auto-fill, minmax(min(300px, 100%), 1fr));
+  gap: clamp(1.5rem, 3vw, 2rem);
+  margin-top: clamp(2.5rem, 6vh, 4rem);
+}
+
+.service-card-link {
+  text-decoration: none;
+  color: inherit;
+  display: block;
 }
 
 .service-card,
@@ -643,13 +649,14 @@ body::after {
   background: rgba(255, 255, 255, 0.7);
   backdrop-filter: blur(24px) saturate(180%);
   border: 1px solid var(--glass-border);
-  border-radius: 28px;
-  padding: 2.5rem;
+  border-radius: clamp(20px, 4vw, 28px);
+  padding: clamp(1.5rem, 4vw, 2.5rem);
   box-shadow: 
     0 8px 32px rgba(30, 42, 68, 0.08),
     inset 0 1px 0 rgba(255, 255, 255, 0.8);
   transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
   position: relative;
+  height: 100%;
 }
 
 .service-card:hover,
@@ -665,16 +672,16 @@ body::after {
 
 .service-icon,
 .service-detail-icon {
-  font-size: 3.5rem;
-  margin-bottom: 1.5rem;
-  filter: drop-shadow(0 4px 12px rgba(229, 82, 39, 0.3));
+  font-size: clamp(2.5rem, 6vw, 3.5rem);
+  margin-bottom: clamp(1rem, 3vh, 1.5rem);
+  filter: drop-shadow(0 4px 12px rgba(206, 22, 47, 0.3));
 }
 
 .service-title,
 .service-detail-title {
-  font-size: 1.5rem;
+  font-size: clamp(1.125rem, 3vw, 1.5rem);
   font-weight: 700;
-  margin-bottom: 1rem;
+  margin-bottom: clamp(0.75rem, 2vh, 1rem);
   color: var(--glass-text);
   letter-spacing: -0.02em;
 }
@@ -682,8 +689,9 @@ body::after {
 .service-description,
 .service-detail-description {
   color: var(--glass-text-muted);
-  margin-bottom: 1.5rem;
+  margin-bottom: clamp(1rem, 3vh, 1.5rem);
   line-height: 1.7;
+  font-size: clamp(0.9rem, 2vw, 1rem);
 }
 
 .service-features,
@@ -691,13 +699,14 @@ body::after {
   list-style: none;
   display: flex;
   flex-direction: column;
-  gap: 0.75rem;
+  gap: clamp(0.5rem, 1.5vh, 0.75rem);
 }
 
 .service-features li {
   padding: 0.625rem 0;
   color: var(--glass-text-muted);
-  font-size: 0.95rem;
+  font-size: clamp(0.85rem, 2vw, 0.95rem);
+  line-height: 1.5;
 }
 
 .service-features li:before {
