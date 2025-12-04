@@ -317,17 +317,17 @@ body::after {
 }
 
 .btn-primary {
-  background: linear-gradient(135deg, var(--orange-primary) 0%, #ff6b3d 100%);
+  background: linear-gradient(135deg, var(--orange-primary) 0%, #E91E45 100%);
   color: white;
   box-shadow: 
-    0 8px 32px rgba(229, 82, 39, 0.4),
+    0 8px 32px rgba(206, 22, 47, 0.4),
     0 0 40px var(--orange-glow);
 }
 
 .btn-primary:hover {
   transform: translateY(-2px);
   box-shadow: 
-    0 12px 48px rgba(229, 82, 39, 0.5),
+    0 12px 48px rgba(206, 22, 47, 0.5),
     0 0 60px var(--orange-glow);
 }
 
