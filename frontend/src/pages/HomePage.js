@@ -84,6 +84,38 @@ const HomePage = () => {
         </div>
       </section>
 
+      {/* Interactive Globe Section */}
+      <section className="globe-section" data-testid="globe-section">
+        <div className="container">
+          <motion.div
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            viewport={{ once: true }}
+            className="globe-content"
+          >
+            <h2 className="section-title">Our Global Footprint</h2>
+            <p className="section-subtitle">
+              Serving businesses across 8 countries with 11 strategic offices worldwide
+            </p>
+            <InteractiveGlobe />
+            <div className="globe-stats">
+              <div className="globe-stat">
+                <span className="globe-stat-icon">🌍</span>
+                <span className="globe-stat-text">20+ Countries Served</span>
+              </div>
+              <div className="globe-stat">
+                <span className="globe-stat-icon">🏢</span>
+                <span className="globe-stat-text">11 Global Offices</span>
+              </div>
+              <div className="globe-stat">
+                <span className="globe-stat-icon">👥</span>
+                <span className="globe-stat-text">25,000+ Business Users</span>
+              </div>
+            </div>
+          </motion.div>
+        </div>
+      </section>
+
       {/* Stats Section */}
       <section className="stats-section">
         <div className="container">
