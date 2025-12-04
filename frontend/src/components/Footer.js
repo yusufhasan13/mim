@@ -9,7 +9,13 @@ const Footer = () => {
         <div className="footer-grid">
           {/* Company Info */}
           <div className="footer-section">
-            <h3 className="footer-heading">My Inbox Media®</h3>
+            <div className="footer-logo-container">
+              <img 
+                src="https://customer-assets.emergentagent.com/job_mim-evolution/artifacts/7ueszcuz_PHOTO-2025-11-24-16-49-11.jpg" 
+                alt="My Inbox Media®" 
+                className="footer-logo"
+              />
+            </div>
             <p className="footer-text">
               Leading IT & Telecommunication solutions provider serving 25,000+ businesses globally for 16+ years.
             </p>
