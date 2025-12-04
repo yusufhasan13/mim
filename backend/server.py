@@ -93,8 +93,21 @@ class MIMProfileScraper:
         """Extract services information"""
         services_data = [
             {
+                "title": "Omni Channel Solutions",
+                "description": "30+ Billion messages per annum across SMS, WhatsApp, RCS, OBD, and Gamification with 99.9% delivery rate",
+                "icon": "🌐",
+                "features": [
+                    "Bulk SMS & WhatsApp API Integration with real-time analytics",
+                    "Rich Media Messaging (Images, PDFs, Videos) across channels",
+                    "Trackable Links with CTR Analytics and conversion tracking",
+                    "OTP Generation & Token Systems with high security",
+                    "Delivery Status Webhooks for real-time updates",
+                    "Gamification & OBD Automation for enhanced engagement"
+                ]
+            },
+            {
                 "title": "SMS Solutions",
-                "description": "30+ Billion SMS per annum with cutting-edge features",
+                "description": "30+ Billion SMS per annum with cutting-edge features and global reach",
                 "icon": "📱",
                 "features": [
                     "Bulk SMS API Integration",
@@ -107,7 +120,7 @@ class MIMProfileScraper:
             },
             {
                 "title": "WhatsApp Business API",
-                "description": "Enhanced engagement with 50M+ messages annually",
+                "description": "Enhanced engagement with 50M+ messages annually and verified business accounts",
                 "icon": "💬",
                 "features": [
                     "Business Platform Integration",
@@ -119,8 +132,23 @@ class MIMProfileScraper:
                 ]
             },
             {
+                "title": "VOCAL BOX",
+                "description": "All-in-one voice communication platform with IVR, OBD, Toll-Free, and Missed Call solutions",
+                "icon": "🎙️",
+                "features": [
+                    "Interactive Voice Response (IVR) Systems",
+                    "Outbound Dialing (OBD) for campaigns",
+                    "Toll-Free Number Services with nationwide coverage",
+                    "Missed Call Solutions for lead generation",
+                    "Voice Broadcasting with scheduling",
+                    "Call Analytics & Detailed Reporting",
+                    "Multi-language Support",
+                    "Custom Voice Prompts & Recording"
+                ]
+            },
+            {
                 "title": "Email Services",
-                "description": "20+ Billion emails annually with high deliverability",
+                "description": "20+ Billion emails annually with enterprise-grade deliverability and infrastructure",
                 "icon": "📧",
                 "features": [
                     "High Deliverability Rates",
@@ -133,7 +161,7 @@ class MIMProfileScraper:
             },
             {
                 "title": "RCS Messaging",
-                "description": "Next-generation messaging with rich content",
+                "description": "Next-generation messaging with rich content and interactive features for modern engagement",
                 "icon": "📲",
                 "features": [
                     "Rich Content Support",
@@ -146,7 +174,7 @@ class MIMProfileScraper:
             },
             {
                 "title": "Chatbot Solutions",
-                "description": "AI-powered customer service automation",
+                "description": "AI-powered customer service automation with intelligent conversational capabilities",
                 "icon": "🤖",
                 "features": [
                     "24/7 Customer Support",
@@ -159,7 +187,7 @@ class MIMProfileScraper:
             },
             {
                 "title": "API Integration",
-                "description": "Seamless integration with enterprise systems",
+                "description": "Seamless integration with enterprise systems and third-party platforms",
                 "icon": "🔌",
                 "features": [
                     "RESTful APIs",
@@ -172,7 +200,7 @@ class MIMProfileScraper:
             },
             {
                 "title": "Gamification",
-                "description": "Engage customers with interactive experiences",
+                "description": "Engage customers with interactive experiences, loyalty programs, and reward systems",
                 "icon": "🎮",
                 "features": [
                     "Customer Engagement",
@@ -185,7 +213,7 @@ class MIMProfileScraper:
             },
             {
                 "title": "QR & Loyalty Programs",
-                "description": "Drive customer retention and engagement",
+                "description": "Drive customer retention and engagement with digital loyalty solutions",
                 "icon": "🎁",
                 "features": [
                     "QR Code Generation",
@@ -194,6 +222,21 @@ class MIMProfileScraper:
                     "Reward Redemption",
                     "Customer Analytics",
                     "Mobile Integration"
+                ]
+            },
+            {
+                "title": "Outdoor/Interactive LED",
+                "description": "High-impact digital signage solutions with LED screens and interactive displays for maximum visibility",
+                "icon": "📺",
+                "features": [
+                    "Large Format LED Displays & Video Walls",
+                    "Interactive Touch Screen Signage",
+                    "Indoor & Outdoor LED Solutions",
+                    "Dynamic Content Management System",
+                    "Real-time Content Updates & Scheduling",
+                    "Weather & Traffic-resistant Outdoor Screens",
+                    "Energy-efficient LED Technology",
+                    "Remote Monitoring & Control"
                 ]
             }
         ]
