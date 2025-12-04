@@ -15,7 +15,9 @@ from dotenv import load_dotenv
 load_dotenv()
 
 # Security configuration
-SECRET_KEY = os.getenv("JWT_SECRET_KEY", "mim-secret-key-change-in-production-123456789")
+SECRET_KEY = os.getenv("JWT_SECRET_KEY")
+if not SECRET_KEY:
+    raise ValueError("JWT_SECRET_KEY must be set in environment variables")
 ALGORITHM = "HS256"
 ACCESS_TOKEN_EXPIRE_MINUTES = 1440  # 24 hours
 
