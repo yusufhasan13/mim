@@ -258,9 +258,9 @@ body::after {
 }
 
 .nav-links-mobile {
-  background: rgba(10, 10, 15, 0.95);
+  background: rgba(255, 255, 255, 0.95);
   backdrop-filter: blur(32px);
-  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  border-top: 1px solid rgba(30, 42, 68, 0.1);
   padding: 1rem 0;
   display: flex;
   flex-direction: column;
@@ -277,7 +277,7 @@ body::after {
 
 .nav-link-mobile:hover,
 .nav-link-mobile.active {
-  background: rgba(255, 255, 255, 0.08);
+  background: rgba(30, 42, 68, 0.05);
   color: var(--orange-primary);
 }
 
