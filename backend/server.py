@@ -67,28 +67,41 @@ class MIMProfileScraper:
     """Scraper for fetching services and clients from mimprofile.e-mim.in"""
     
     BASE_URL = "https://mimprofile.e-mim.in"
-    TIMEOUT = 10
+    TIMEOUT = 15
+    MAX_RETRIES = 2
     
     @staticmethod
     def fetch_page_content() -> str:
-        """Fetch the HTML content of the profile page"""
-        try:
-            headers = {
-                'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36'
-            }
-            response = requests.get(
-                MIMProfileScraper.BASE_URL, 
-                headers=headers, 
-                timeout=MIMProfileScraper.TIMEOUT
-            )
-            response.raise_for_status()
-            return response.text
-        except requests.RequestException as e:
-            logging.error(f"Failed to fetch page: {str(e)}")
-            raise HTTPException(
-                status_code=status.HTTP_503_SERVICE_UNAVAILABLE,
-                detail=f"Unable to fetch external data: {str(e)}"
-            )
+        """Fetch the HTML content of the profile page with retry logic"""
+        headers = {
+            'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36'
+        }
+        
+        for attempt in range(MIMProfileScraper.MAX_RETRIES):
+            try:
+                response = requests.get(
+                    MIMProfileScraper.BASE_URL, 
+                    headers=headers, 
+                    timeout=MIMProfileScraper.TIMEOUT
+                )
+                response.raise_for_status()
+                return response.text
+            except requests.Timeout as e:
+                if attempt < MIMProfileScraper.MAX_RETRIES - 1:
+                    logging.warning(f"Timeout on attempt {attempt + 1}, retrying...")
+                    continue
+                else:
+                    logging.error(f"Failed after {MIMProfileScraper.MAX_RETRIES} attempts: Timeout")
+                    raise HTTPException(
+                        status_code=status.HTTP_504_GATEWAY_TIMEOUT,
+                        detail="External data source is not responding"
+                    )
+            except requests.RequestException as e:
+                logging.error(f"Failed to fetch page: {str(e)}")
+                raise HTTPException(
+                    status_code=status.HTTP_503_SERVICE_UNAVAILABLE,
+                    detail=f"Unable to fetch external data: {str(e)}"
+                )
     
     @staticmethod
     def extract_services(html_content: str) -> List[ServiceItem]:
