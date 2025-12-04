@@ -160,13 +160,6 @@ const HomePage = () => {
               ))}
             </div>
           )}
-
-          <div className="section-cta">
-            <Link to="/services" className="btn btn-primary" data-testid="view-all-services">
-              View All Services
-              <ArrowRight size={20} />
-            </Link>
-          </div>
         </div>
       </section>
 
