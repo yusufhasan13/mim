@@ -1776,13 +1776,13 @@ body::after {
 }
 
 .blog-tag {
-  background: rgba(229, 82, 39, 0.1);
+  background: rgba(206, 22, 47, 0.1);
   color: var(--orange-primary);
   padding: 0.625rem 1.25rem;
   border-radius: 100px;
   font-size: 0.875rem;
   font-weight: 600;
-  border: 1px solid rgba(229, 82, 39, 0.2);
+  border: 1px solid rgba(206, 22, 47, 0.2);
 }
 
 /* Case Study Specific */
