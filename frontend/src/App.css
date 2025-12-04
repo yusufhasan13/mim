@@ -1416,6 +1416,17 @@ body::after {
   padding: 0 2rem;
 }
 
+.footer-logo-container {
+  margin-bottom: 1.5rem;
+}
+
+.footer-logo {
+  height: 60px;
+  width: auto;
+  object-fit: contain;
+  filter: brightness(1.1);
+}
+
 .footer-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
