@@ -34,14 +34,8 @@ const HomePage = () => {
 
   return (
     <div className="page home-page" data-testid="home-page">
-      {/* Hero Section with Globe Background */}
-      <section className="hero-section-with-globe">
-        {/* Globe as background */}
-        <div className="hero-globe-background">
-          <InteractiveGlobe />
-        </div>
-
-        {/* Hero content on top */}
+      {/* Hero Section */}
+      <section className="hero-section">
         <div className="hero-content">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
