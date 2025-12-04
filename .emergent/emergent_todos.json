@@ -1,23 +1,23 @@
 [
   {
     "content": "Check for missing .env files in frontend and backend directories",
-    "status": "in_progress"
+    "status": "completed"
   },
   {
     "content": "Verify CORS configuration in backend",
-    "status": "pending"
+    "status": "completed"
   },
   {
     "content": "Check for hardcoded secrets and URLs",
-    "status": "pending"
+    "status": "completed"
   },
   {
     "content": "Verify database configuration",
-    "status": "pending"
+    "status": "completed"
   },
   {
     "content": "Check for ML/Blockchain dependencies",
-    "status": "pending"
+    "status": "in_progress"
   },
   {
     "content": "Run compilation checks",
