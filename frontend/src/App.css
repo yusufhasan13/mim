@@ -73,7 +73,7 @@ body::before {
   width: 200%;
   height: 200%;
   background: 
-    radial-gradient(circle at 20% 30%, rgba(229, 82, 39, 0.08) 0%, transparent 50%),
+    radial-gradient(circle at 20% 30%, rgba(206, 22, 47, 0.08) 0%, transparent 50%),
     radial-gradient(circle at 80% 70%, rgba(30, 42, 68, 0.06) 0%, transparent 50%),
     radial-gradient(circle at 40% 80%, rgba(138, 43, 226, 0.05) 0%, transparent 50%),
     radial-gradient(circle at 70% 20%, rgba(59, 130, 246, 0.05) 0%, transparent 50%);
