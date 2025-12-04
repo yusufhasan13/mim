@@ -5,7 +5,7 @@
   },
   {
     "content": "Phase 1 POC: Create backend POC endpoints for external data scraping (services & clients)",
-    "status": "pending"
+    "status": "in_progress"
   },
   {
     "content": "Phase 1 POC: Implement contact form endpoint with DB storage and email notification",
