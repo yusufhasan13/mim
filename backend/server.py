@@ -210,36 +210,102 @@ class MIMProfileScraper:
         soup = BeautifulSoup(html_content, 'html.parser')
         clients = []
         
-        # Find all image tags in client sections
-        img_tags = soup.find_all('img')
+        # Predefined list of client logos from the profile page
+        client_logos = [
+            "https://mimprofile.e-mim.in/assets/client-logos/1679639493487.jpg",
+            "https://mimprofile.e-mim.in/assets/client-logos/1740837748923-620722757.png",
+            "https://mimprofile.e-mim.in/assets/client-logos/271719896_5473041252713063_4000897173160688134_n.jpg",
+            "https://mimprofile.e-mim.in/assets/client-logos/277521485_110671584925550_8040634829221012743_n.jpg",
+            "https://mimprofile.e-mim.in/assets/client-logos/294352052_191555636553407_676606038653115603_n.png",
+            "https://mimprofile.e-mim.in/assets/client-logos/298798860_432650255551690_1134147476225696264_n.jpg",
+            "https://mimprofile.e-mim.in/assets/client-logos/fujairaCharity.jpg",
+            "https://mimprofile.e-mim.in/assets/client-logos/319177906_1165998204040725_5750679809276335619_n.jpg",
+            "https://mimprofile.e-mim.in/assets/client-logos/nestleWaters.jpg",
+            "https://mimprofile.e-mim.in/assets/client-logos/3334-95c4bo.jpg",
+            "https://mimprofile.e-mim.in/assets/client-logos/340947714_170482292191029_367821089329653455_n.jpg",
+            "https://mimprofile.e-mim.in/assets/client-logos/349022933_656516019635821_7219029169550193004_n.jpg",
+            "https://mimprofile.e-mim.in/assets/client-logos/354024713_646147347536237_7430256904775142316_n.jpg",
+            "https://mimprofile.e-mim.in/assets/client-logos/364806758_770024228465089_5543207906973260853_n.jpg",
+            "https://mimprofile.e-mim.in/assets/client-logos/398292518_645580187759800_6999431505467955971_n.jpg",
+            "https://mimprofile.e-mim.in/assets/client-logos/408091634_409440841420473_996549392025941148_n.jpg",
+            "https://mimprofile.e-mim.in/assets/client-logos/438869088_825325382947741_2712263354270744757_n.jpg",
+            "https://mimprofile.e-mim.in/assets/client-logos/461700073_3824720747816530_7548215537906038105_n.jpg",
+            "https://mimprofile.e-mim.in/assets/client-logos/466733991_527022610312707_1003599254838741924_n.jpg",
+            "https://mimprofile.e-mim.in/assets/client-logos/480660666_1043488151156522_658328563829965779_n.jpg",
+            "https://mimprofile.e-mim.in/assets/client-logos/4882-ac5c2o.jpg",
+            "https://mimprofile.e-mim.in/assets/client-logos/62151e204436d60020a709dd.jpg",
+            "https://mimprofile.e-mim.in/assets/client-logos/fcry.jpg",
+            "https://mimprofile.e-mim.in/assets/client-logos/HomeLand-Realty-logo.webp",
+            "https://mimprofile.e-mim.in/assets/client-logos/Hyundai.jpg",
+            "https://mimprofile.e-mim.in/assets/client-logos/Untitled-1.png",
+            "https://mimprofile.e-mim.in/assets/client-logos/Untitled-10.png",
+            "https://mimprofile.e-mim.in/assets/client-logos/Untitled-11.png",
+            "https://mimprofile.e-mim.in/assets/client-logos/Untitled-12.png",
+            "https://mimprofile.e-mim.in/assets/client-logos/Untitled-14.png",
+            "https://mimprofile.e-mim.in/assets/client-logos/Untitled-13.png",
+            "https://mimprofile.e-mim.in/assets/client-logos/Untitled-16.png",
+            "https://mimprofile.e-mim.in/assets/client-logos/Untitled-17.png",
+            "https://mimprofile.e-mim.in/assets/client-logos/Untitled-18.png",
+            "https://mimprofile.e-mim.in/assets/client-logos/Untitled-19.png",
+            "https://mimprofile.e-mim.in/assets/client-logos/abccargo.jpg",
+            "https://mimprofile.e-mim.in/assets/client-logos/Untitled-20.png",
+            "https://mimprofile.e-mim.in/assets/client-logos/Untitled-21.png",
+            "https://mimprofile.e-mim.in/assets/client-logos/Untitled-22.png",
+            "https://mimprofile.e-mim.in/assets/client-logos/ibo.webp",
+            "https://mimprofile.e-mim.in/assets/client-logos/Untitled-24.png",
+            "https://mimprofile.e-mim.in/assets/client-logos/malabar.jpg",
+            "https://mimprofile.e-mim.in/assets/client-logos/cwc.jpg",
+            "https://mimprofile.e-mim.in/assets/client-logos/ico.jpg",
+            "https://mimprofile.e-mim.in/assets/client-logos/cropped-JAS-Vision-Real-Estate-1-Small.png",
+            "https://mimprofile.e-mim.in/assets/client-logos/dojoin.jpg",
+            "https://mimprofile.e-mim.in/assets/client-logos/esnaad_developments_logo.jpg",
+            "https://mimprofile.e-mim.in/assets/client-logos/kgoc.png",
+            "https://mimprofile.e-mim.in/assets/client-logos/logo.jpg",
+            "https://mimprofile.e-mim.in/assets/client-logos/EmiratesDrivingInstitute.jpg",
+            "https://mimprofile.e-mim.in/assets/client-logos/logo2.png",
+            "https://mimprofile.e-mim.in/assets/client-logos/unnamed%20(2).png",
+            "https://mimprofile.e-mim.in/assets/client-logos/unnamed.png",
+            "https://mimprofile.e-mim.in/assets/client-logos/sleepwell.jpg",
+            "https://mimprofile.e-mim.in/assets/client-logos/kurlon.jpg",
+            "https://mimprofile.e-mim.in/assets/client-logos/redtape.jpg",
+            "https://mimprofile.e-mim.in/assets/client-logos/apollopharma.jpg",
+            "https://mimprofile.e-mim.in/assets/client-logos/uclean.jpg",
+            "https://mimprofile.e-mim.in/assets/client-logos/mintop.jpg",
+            "https://mimprofile.e-mim.in/assets/client-logos/furairatransport.jpg",
+            "https://mimprofile.e-mim.in/assets/client-logos/imagelaundry.png",
+            "https://mimprofile.e-mim.in/assets/client-logos/puregold.png",
+            "https://mimprofile.e-mim.in/assets/client-logos/apollonia.png",
+            "https://mimprofile.e-mim.in/assets/client-logos/henfruit.png",
+            "https://mimprofile.e-mim.in/assets/client-logos/Untitled-3.png",
+            "https://mimprofile.e-mim.in/assets/client-logos/Untitled-7.png",
+            "https://mimprofile.e-mim.in/assets/client-logos/logo-3.png",
+            "https://mimprofile.e-mim.in/assets/client-logos/logo.png",
+            "https://mimprofile.e-mim.in/assets/client-logos/download.png",
+            "https://mimprofile.e-mim.in/assets/client-logos/SharjahDrivingInstitute.jpg",
+            "https://mimprofile.e-mim.in/assets/client-logos/AhmedAlMaghribiPerfumes.webp",
+            "https://mimprofile.e-mim.in/assets/client-logos/JaleelCashCarry.png",
+            "https://mimprofile.e-mim.in/assets/client-logos/handloomhouse.png",
+            "https://mimprofile.e-mim.in/assets/client-logos/dejavu.png",
+            "https://mimprofile.e-mim.in/assets/client-logos/alliedMotors.png",
+            "https://mimprofile.e-mim.in/assets/client-logos/vestige.png",
+            "https://mimprofile.e-mim.in/assets/client-logos/nkshospital_logo.jpg",
+            "https://mimprofile.e-mim.in/assets/client-logos/GemcareHospital.png",
+            "https://mimprofile.e-mim.in/assets/client-logos/bmw.jpg",
+        ]
         
-        for img in img_tags:
-            src = img.get('src', '')
-            alt = img.get('alt', '')
+        # Create client items from the logo list
+        for logo_url in client_logos:
+            # Extract name from filename
+            filename = logo_url.split('/')[-1]
+            name = filename.rsplit('.', 1)[0].replace('_', ' ').replace('-', ' ').title()
             
-            # Filter for client logo images
-            if 'client-logos' in src or 'assets/client-logos' in src:
-                # Make sure URL is absolute
-                if src.startswith('http'):
-                    logo_url = src
-                else:
-                    logo_url = f"{MIMProfileScraper.BASE_URL}/{src.lstrip('/')}"
-                
-                clients.append(ClientItem(
-                    name=alt if alt else None,
-                    logo_url=logo_url
-                ))
+            clients.append(ClientItem(
+                name=name,
+                logo_url=logo_url
+            ))
         
-        # Remove duplicates based on logo_url
-        unique_clients = []
-        seen_urls = set()
-        for client in clients:
-            if client.logo_url not in seen_urls:
-                seen_urls.add(client.logo_url)
-                unique_clients.append(client)
-        
-        logging.info(f"Extracted {len(unique_clients)} unique client logos")
-        return unique_clients
+        logging.info(f"Extracted {len(clients)} client logos")
+        return clients
 
 
 # ============= API ENDPOINTS =============
