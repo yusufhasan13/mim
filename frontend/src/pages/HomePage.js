@@ -17,7 +17,7 @@ const HomePage = () => {
   const fetchServices = async () => {
     try {
       const response = await apiService.getServices();
-      setServices(response.data.data.slice(0, 4)); // Show first 4 services
+      setServices(response.data.data); // Show ALL services on homepage
     } catch (error) {
       console.error('Error fetching services:', error);
     } finally {
