@@ -1,58 +1,30 @@
 [
   {
-    "content": "Phase 1 POC: Get email integration playbook and web scraping approach",
-    "status": "completed"
+    "content": "Check for missing .env files in frontend and backend directories",
+    "status": "in_progress"
   },
   {
-    "content": "Phase 1 POC: Create backend POC endpoints for external data scraping (services & clients)",
-    "status": "completed"
+    "content": "Verify CORS configuration in backend",
+    "status": "pending"
   },
   {
-    "content": "Phase 1 POC: Implement contact form endpoint with DB storage and email notification",
-    "status": "completed"
+    "content": "Check for hardcoded secrets and URLs",
+    "status": "pending"
   },
   {
-    "content": "Phase 1 POC: Create test_core.py to validate all POC functionality",
-    "status": "completed"
+    "content": "Verify database configuration",
+    "status": "pending"
   },
   {
-    "content": "Phase 1 POC: Fix and iterate until all POC tests pass",
-    "status": "completed"
+    "content": "Check for ML/Blockchain dependencies",
+    "status": "pending"
   },
   {
-    "content": "Phase 1 POC: All user stories covered and validated",
-    "status": "completed"
+    "content": "Run compilation checks",
+    "status": "pending"
   },
   {
-    "content": "Phase 2: Get design guidelines from design agent",
-    "status": "completed"
-  },
-  {
-    "content": "Phase 2: Install required dependencies (backend & frontend)",
-    "status": "completed"
-  },
-  {
-    "content": "Phase 2: Build complete backend with all models, auth, CRUD APIs",
-    "status": "completed"
-  },
-  {
-    "content": "Phase 2: Build complete frontend with all pages, routing, 3D effects",
-    "status": "completed"
-  },
-  {
-    "content": "Phase 2: Create test admin user for admin panel access",
-    "status": "completed"
-  },
-  {
-    "content": "Phase 2: End to End Testing using Testing Agent",
-    "status": "completed"
-  },
-  {
-    "content": "Phase 2: Fix all bugs reported by testing agent",
-    "status": "completed"
-  },
-  {
-    "content": "Phase 2: All user stories covered in Development and testing",
-    "status": "completed"
+    "content": "Generate final deployment report",
+    "status": "pending"
   }
 ]
