@@ -406,8 +406,8 @@ async def get_external_services():
 async def get_external_clients():
     """Fetch client logos from external source"""
     try:
-        html_content = MIMProfileScraper.fetch_page_content()
-        clients = MIMProfileScraper.extract_clients(html_content)
+        # Clients are predefined, no need to fetch HTML
+        clients = MIMProfileScraper.extract_clients("")
         
         return {
             "success": True,
