@@ -1,5 +1,6 @@
 import React, { useEffect, useRef } from 'react';
 import Globe from 'react-globe.gl';
+import * as THREE from 'three';
 
 const InteractiveGlobe = () => {
   const globeEl = useRef();
@@ -60,6 +61,14 @@ const InteractiveGlobe = () => {
     }
   }, []);
 
+  // Create globe material
+  const globeMaterial = new THREE.MeshPhongMaterial({
+    color: '#1E2A44',
+    emissive: '#0a0a0f',
+    emissiveIntensity: 0.1,
+    shininess: 0.5
+  });
+
   return (
     <div className="globe-container" data-testid="interactive-globe">
       <Globe
@@ -87,14 +96,7 @@ const InteractiveGlobe = () => {
         atmosphereAltitude={0.15}
         
         // Custom globe material
-        globeMaterial={
-          new window.THREE.MeshPhongMaterial({
-            color: '#1E2A44',
-            emissive: '#0a0a0f',
-            emissiveIntensity: 0.1,
-            shininess: 0.5
-          })
-        }
+        globeMaterial={globeMaterial}
         
         width={600}
         height={600}
