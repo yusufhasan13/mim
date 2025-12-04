@@ -5,58 +5,45 @@ import * as THREE from 'three';
 const InteractiveGlobe = () => {
   const globeEl = useRef();
 
-  // Global presence locations for My Inbox Media
+  // Global presence locations
   const locations = [
-    // India (Hub)
-    { lat: 19.0760, lng: 72.8777, name: 'Mumbai, India', size: 1.2, color: '#00D9FF' },
-    { lat: 28.7041, lng: 77.1025, name: 'Delhi, India', size: 0.9, color: '#00D9FF' },
-    { lat: 12.9716, lng: 77.5946, name: 'Bangalore, India', size: 0.9, color: '#00D9FF' },
-    { lat: 17.3850, lng: 78.4867, name: 'Hyderabad, India', size: 0.8, color: '#00D9FF' },
-    
-    // UAE
-    { lat: 25.2048, lng: 55.2708, name: 'Dubai, UAE', size: 1.0, color: '#00D9FF' },
-    
-    // Canada
-    { lat: 43.6532, lng: -79.3832, name: 'Toronto, Canada', size: 0.9, color: '#00D9FF' },
-    
-    // USA
-    { lat: 40.7128, lng: -74.0060, name: 'New York, USA', size: 1.0, color: '#00D9FF' },
-    
-    // KSA
-    { lat: 24.7136, lng: 46.6753, name: 'Riyadh, KSA', size: 0.9, color: '#00D9FF' },
-    
-    // Egypt
-    { lat: 30.0444, lng: 31.2357, name: 'Cairo, Egypt', size: 0.9, color: '#00D9FF' },
-    
-    // Australia
-    { lat: -33.8688, lng: 151.2093, name: 'Sydney, Australia', size: 0.9, color: '#00D9FF' },
-    
-    // Qatar
-    { lat: 25.2854, lng: 51.5310, name: 'Doha, Qatar', size: 0.8, color: '#00D9FF' },
+    { lat: 19.0760, lng: 72.8777, name: 'Mumbai, India', size: 1.5 },
+    { lat: 28.7041, lng: 77.1025, name: 'Delhi, India', size: 1.2 },
+    { lat: 12.9716, lng: 77.5946, name: 'Bangalore, India', size: 1.2 },
+    { lat: 17.3850, lng: 78.4867, name: 'Hyderabad, India', size: 1.0 },
+    { lat: 25.2048, lng: 55.2708, name: 'Dubai, UAE', size: 1.3 },
+    { lat: 43.6532, lng: -79.3832, name: 'Toronto, Canada', size: 1.2 },
+    { lat: 40.7128, lng: -74.0060, name: 'New York, USA', size: 1.3 },
+    { lat: 24.7136, lng: 46.6753, name: 'Riyadh, KSA', size: 1.2 },
+    { lat: 30.0444, lng: 31.2357, name: 'Cairo, Egypt', size: 1.2 },
+    { lat: -33.8688, lng: 151.2093, name: 'Sydney, Australia', size: 1.2 },
+    { lat: 25.2854, lng: 51.5310, name: 'Doha, Qatar', size: 1.0 },
   ];
 
-  // Create arcs between locations to show global connectivity
+  // Create arcs from Mumbai hub to all locations
   const arcs = [];
-  const hubIndex = 0; // Mumbai as main hub
+  const hubIndex = 0;
   for (let i = 1; i < locations.length; i++) {
     arcs.push({
       startLat: locations[hubIndex].lat,
       startLng: locations[hubIndex].lng,
       endLat: locations[i].lat,
       endLng: locations[i].lng,
-      color: ['#FF1B8D', '#FF1B8D'] // Hot pink/magenta like in the video
+      color: '#FF1B8D'
     });
   }
 
   useEffect(() => {
     if (globeEl.current) {
-      // Auto-rotate slowly
-      globeEl.current.controls().autoRotate = true;
-      globeEl.current.controls().autoRotateSpeed = 0.3;
-      globeEl.current.controls().enableZoom = false;
+      const controls = globeEl.current.controls();
+      controls.autoRotate = true;
+      controls.autoRotateSpeed = 0.4;
+      controls.enableZoom = false;
+      controls.enablePan = false;
+      controls.minPolarAngle = Math.PI / 3.5;
+      controls.maxPolarAngle = Math.PI - Math.PI / 3;
       
-      // Set initial view - focus on Asia/Middle East
-      globeEl.current.pointOfView({ lat: 25, lng: 60, altitude: 2.2 }, 0);
+      globeEl.current.pointOfView({ lat: 20, lng: 50, altitude: 2 }, 0);
     }
   }, []);
 
@@ -65,71 +52,57 @@ const InteractiveGlobe = () => {
       <Globe
         ref={globeEl}
         
-        // Use hexbin (dotted pattern) instead of image
-        hexBinPointsData={locations}
-        hexBinPointWeight="size"
-        hexBinResolution={3}
-        hexBinMargin={0.6}
-        hexBinColor={() => '#4169E1'}
+        // Hex binning for dotted mesh pattern
+        hexPolygonsData={[]}
+        hexPolygonResolution={3}
+        hexPolygonMargin={0.3}
         
-        // Points layer (bright markers)
+        // Points layer (bright cyan markers)
         pointsData={locations}
-        pointAltitude={0.02}
-        pointRadius={d => d.size * 0.3}
-        pointColor="color"
-        pointLabel={d => `
-          <div style="
-            background: rgba(0, 0, 0, 0.9); 
-            padding: 10px 16px; 
-            border-radius: 12px; 
-            color: white; 
-            font-family: Inter, sans-serif; 
-            font-size: 14px; 
-            font-weight: 600;
-            border: 1px solid rgba(0, 217, 255, 0.3);
-            backdrop-filter: blur(12px);
-          ">
-            ${d.name}
-          </div>
-        `}
+        pointAltitude={0.01}
+        pointRadius={d => d.size * 0.15}
+        pointColor={() => '#00D9FF'}
+        pointsMerge={true}
         
-        // Arcs layer (pink/magenta connections)
+        // Arcs layer (pink/magenta)
         arcsData={arcs}
         arcColor="color"
-        arcDashLength={0.6}
-        arcDashGap={0.3}
+        arcDashLength={1}
+        arcDashGap={0.5}
         arcDashAnimateTime={2000}
-        arcStroke={1.5}
-        arcAltitudeAutoScale={0.3}
+        arcStroke={0.8}
+        arcAltitudeAutoScale={0.5}
         
-        // Rings layer (pulsing effect at locations)
+        // Rings (pulsing circles at locations)
         ringsData={locations}
         ringColor={() => '#FF1B8D'}
-        ringMaxRadius={3}
-        ringPropagationSpeed={2}
-        ringRepeatPeriod={1500}
+        ringMaxRadius={2}
+        ringPropagationSpeed={1.5}
+        ringRepeatPeriod={2000}
+        ringAltitude={0.01}
         
-        // Atmosphere (blue glow)
+        // Atmosphere (cyan/blue glow)
         atmosphereColor="#00D9FF"
-        atmosphereAltitude={0.2}
+        atmosphereAltitude={0.25}
         
-        // Globe material - purple/blue gradient
+        // Globe material - purple/blue
         globeMaterial={
           new THREE.MeshPhongMaterial({
             color: '#3B2F87',
             emissive: '#1a1444',
-            emissiveIntensity: 0.3,
-            shininess: 0.9,
+            emissiveIntensity: 0.4,
+            shininess: 0.7,
             transparent: true,
-            opacity: 0.95
+            opacity: 0.9
           })
         }
         
-        // Background
-        backgroundImageUrl="//unpkg.com/three-globe/example/img/night-sky.png"
+        // Show as dots pattern (like GitHub globe)
+        showAtmosphere={true}
+        showGraticules={false}
         
-        width={900}
-        height={900}
+        width={typeof window !== 'undefined' ? Math.min(window.innerWidth, 1000) : 1000}
+        height={typeof window !== 'undefined' ? Math.min(window.innerHeight, 1000) : 1000}
       />
     </div>
   );
