@@ -184,13 +184,20 @@ body::after {
   height: 50px;
   width: auto;
   object-fit: contain;
-  filter: brightness(1.1);
+  /* No filter - keep original logo colors */
 }
 
 @media (max-width: 768px) {
   .nav-logo-img {
     height: 40px;
   }
+}
+
+.footer-logo {
+  height: 60px;
+  width: auto;
+  object-fit: contain;
+  /* No filter - keep original logo colors */
 }
 
 .nav-links-desktop {
