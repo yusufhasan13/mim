@@ -1,0 +1,54 @@
+[
+  {
+    "content": "Phase 1 POC: Get email integration playbook and web scraping approach",
+    "status": "completed"
+  },
+  {
+    "content": "Phase 1 POC: Create backend POC endpoints for external data scraping (services & clients)",
+    "status": "pending"
+  },
+  {
+    "content": "Phase 1 POC: Implement contact form endpoint with DB storage and email notification",
+    "status": "pending"
+  },
+  {
+    "content": "Phase 1 POC: Create test_core.py to validate all POC functionality",
+    "status": "pending"
+  },
+  {
+    "content": "Phase 1 POC: Fix and iterate until all POC tests pass",
+    "status": "pending"
+  },
+  {
+    "content": "Phase 1 POC: All user stories covered and validated",
+    "status": "pending"
+  },
+  {
+    "content": "Phase 2: Get design guidelines from design agent",
+    "status": "pending"
+  },
+  {
+    "content": "Phase 2: Install required dependencies (backend & frontend)",
+    "status": "pending"
+  },
+  {
+    "content": "Phase 2: Build complete backend with all models, auth, CRUD APIs",
+    "status": "pending"
+  },
+  {
+    "content": "Phase 2: Build complete frontend with all pages, routing, 3D effects",
+    "status": "pending"
+  },
+  {
+    "content": "Phase 2: End to End Testing using Testing Agent",
+    "status": "pending"
+  },
+  {
+    "content": "Phase 2: Fix all bugs reported by testing agent",
+    "status": "pending"
+  },
+  {
+    "content": "Phase 2: All user stories covered in Development and testing",
+    "status": "pending"
+  }
+]
