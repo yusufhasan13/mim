@@ -666,7 +666,12 @@ async def get_testimonials(
         if featured_only:
             query["featured"] = True
         
-        cursor = db.testimonials.find(query).sort("created_at", -1)
+        cursor = db.testimonials.find(
+            query,
+            {"_id": 1, "client_name": 1, "client_position": 1, "client_company": 1,
+             "client_image": 1, "testimonial_text": 1, "rating": 1, "featured": 1,
+             "published": 1, "created_at": 1}
+        ).sort("created_at", -1).limit(100)
         testimonials = await cursor.to_list(length=100)
         
         return {
