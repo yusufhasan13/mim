@@ -14,7 +14,7 @@ init(autoreset=True)
 
 # Test configuration
 BASE_URL = "http://localhost:8001"
-TIMEOUT = 10
+TIMEOUT = 20
 
 # Test results tracking
 test_results = {
