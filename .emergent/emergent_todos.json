@@ -21,10 +21,10 @@
   },
   {
     "content": "Run compilation checks",
-    "status": "in_progress"
+    "status": "completed"
   },
   {
     "content": "Generate final deployment report",
-    "status": "pending"
+    "status": "in_progress"
   }
 ]
