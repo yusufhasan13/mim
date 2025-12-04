@@ -1909,3 +1909,212 @@ body::after {
   gap: 1.25rem;
   margin-bottom: 1.75rem;
 }
+
+/* Override page-hero for light theme */
+.page-hero {
+  padding: 8rem 0 6rem;
+  text-align: center;
+  position: relative;
+  background: linear-gradient(135deg, #1E2A44 0%, #2A3A54 50%, #1E2A44 100%);
+}
+
+.page-title {
+  color: #FFFFFF;
+}
+
+.page-subtitle {
+  color: rgba(255, 255, 255, 0.75);
+}
+
+/* Override CTA section */
+.cta-section {
+  padding: 8rem 0;
+  text-align: center;
+  position: relative;
+  background: linear-gradient(135deg, #1E2A44 0%, #2A3A54 100%);
+}
+
+.cta-content {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 4rem 3rem;
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(32px) saturate(200%);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 40px;
+  box-shadow: 
+    0 20px 60px rgba(0, 0, 0, 0.3),
+    inset 0 2px 0 rgba(255, 255, 255, 0.15);
+}
+
+.cta-content h2 {
+  color: #FFFFFF;
+}
+
+.cta-content p {
+  color: rgba(255, 255, 255, 0.75);
+}
+
+/* Override footer to keep dark */
+.footer {
+  background: var(--navy-primary);
+  color: #FFFFFF;
+}
+
+.footer-text,
+.footer-links a,
+.footer-links li,
+.footer-contact a,
+.footer-contact span,
+.footer-bottom,
+.footer-certifications span {
+  color: rgba(255, 255, 255, 0.75);
+}
+
+.footer-heading {
+  color: #FFFFFF;
+}
+
+.footer-stat .stat-label {
+  color: rgba(255, 255, 255, 0.6);
+}
+
+/* Light theme adjustments for all other sections */
+.content-section {
+  background: var(--bg-white);
+}
+
+.section-title {
+  color: var(--navy-primary);
+}
+
+.section-subtitle {
+  color: var(--glass-text-muted);
+}
+
+.loading-spinner,
+.empty-state {
+  color: var(--glass-text-muted);
+}
+
+/* Industries section */
+.industries-section {
+  padding: 6rem 0;
+  background: var(--bg-light);
+}
+
+/* Values section */
+.values-section {
+  padding: 6rem 0;
+  background: var(--bg-light);
+}
+
+/* Certifications */
+.certifications-section {
+  padding: 6rem 0;
+  background: var(--bg-white);
+}
+
+.certification-badge {
+  background: rgba(255, 255, 255, 0.7);
+  backdrop-filter: blur(24px);
+  border: 2px solid var(--orange-primary);
+  box-shadow: 
+    0 8px 32px rgba(30, 42, 68, 0.08),
+    0 0 40px rgba(229, 82, 39, 0.15);
+}
+
+.certification-badge h3 {
+  color: var(--orange-primary);
+}
+
+.certification-badge p {
+  color: var(--glass-text-muted);
+}
+
+/* Client logo adjustments for white background */
+.client-logo-img {
+  filter: none;
+  opacity: 1;
+}
+
+/* Admin login page */
+.admin-login-page {
+  background: var(--bg-light);
+}
+
+.login-card {
+  background: rgba(255, 255, 255, 0.8);
+  backdrop-filter: blur(32px) saturate(200%);
+  border: 1px solid var(--glass-border);
+  box-shadow: 
+    0 20px 80px rgba(30, 42, 68, 0.12),
+    inset 0 2px 0 rgba(255, 255, 255, 0.9);
+}
+
+.login-header h1 {
+  color: var(--navy-primary);
+}
+
+.login-header p {
+  color: var(--glass-text-muted);
+}
+
+.login-form label {
+  color: var(--glass-text);
+}
+
+/* Admin dashboard */
+.admin-sidebar {
+  background: var(--navy-primary);
+  color: #FFFFFF;
+  border-right: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.admin-sidebar-header h2 {
+  color: #FFFFFF;
+}
+
+.admin-sidebar-header p {
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.admin-nav-link {
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.admin-nav-link:hover {
+  background: rgba(255, 255, 255, 0.1);
+  color: #FFFFFF;
+}
+
+.admin-logout-btn {
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.admin-content {
+  background: var(--bg-light);
+}
+
+.admin-page {
+  background: rgba(255, 255, 255, 0.8);
+  backdrop-filter: blur(24px);
+  border: 1px solid var(--glass-border);
+  box-shadow: 
+    0 8px 32px rgba(30, 42, 68, 0.08),
+    inset 0 1px 0 rgba(255, 255, 255, 0.9);
+}
+
+.admin-page h1,
+.admin-page h2 {
+  color: var(--navy-primary);
+}
+
+.admin-stat-card {
+  background: rgba(255, 255, 255, 0.6);
+  border: 1px solid var(--glass-border);
+}
+
+.admin-stat-card h3 {
+  color: var(--glass-text-muted);
+}
