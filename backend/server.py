@@ -238,6 +238,21 @@ class MIMProfileScraper:
                     "Energy-efficient LED Technology",
                     "Remote Monitoring & Control"
                 ]
+            },
+            {
+                "title": "Software Solutions",
+                "description": "Custom enterprise software development including CRM, DMS, Loyalty Programs, and tailored business applications",
+                "icon": "💻",
+                "features": [
+                    "CRM (Customer Relationship Management) Systems",
+                    "DMS (Document Management Systems)",
+                    "Loyalty Program Software",
+                    "Customized Business Applications",
+                    "Cloud-based Solutions",
+                    "Mobile App Development",
+                    "System Integration Services",
+                    "Ongoing Support & Maintenance"
+                ]
             }
         ]
         
