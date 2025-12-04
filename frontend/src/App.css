@@ -929,14 +929,17 @@ body::after {
 .form-group select,
 .form-group textarea {
   padding: 1rem 1.25rem;
-  background: rgba(255, 255, 255, 0.05);
-  border: 1px solid rgba(255, 255, 255, 0.12);
+  background: rgba(255, 255, 255, 0.9);
+  border: 2px solid rgba(30, 42, 68, 0.2);
   border-radius: 16px;
   font-family: var(--font-system);
   font-size: 1rem;
   color: var(--glass-text);
   backdrop-filter: blur(12px);
   transition: all 0.3s;
+  box-shadow: 
+    0 2px 8px rgba(30, 42, 68, 0.05),
+    inset 0 1px 2px rgba(30, 42, 68, 0.05);
 }
 
 .form-group input:focus,
@@ -944,8 +947,10 @@ body::after {
 .form-group textarea:focus {
   outline: none;
   border-color: var(--orange-primary);
-  background: rgba(255, 255, 255, 0.08);
-  box-shadow: 0 0 0 4px rgba(229, 82, 39, 0.1);
+  background: rgba(255, 255, 255, 1);
+  box-shadow: 
+    0 0 0 4px rgba(206, 22, 47, 0.1),
+    0 4px 16px rgba(30, 42, 68, 0.1);
 }
 
 .form-group input::placeholder,
