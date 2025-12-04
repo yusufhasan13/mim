@@ -383,8 +383,8 @@ async def health_check():
 async def get_external_services():
     """Fetch services data from external source"""
     try:
-        html_content = MIMProfileScraper.fetch_page_content()
-        services = MIMProfileScraper.extract_services(html_content)
+        # Services are predefined, no need to fetch HTML
+        services = MIMProfileScraper.extract_services("")
         
         return {
             "success": True,
