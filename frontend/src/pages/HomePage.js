@@ -135,7 +135,7 @@ const HomePage = () => {
           {loading ? (
             <div className="loading-spinner" data-testid="services-loading">Loading services...</div>
           ) : (
-            <div className="services-grid">
+            <div className="services-grid-expandable">
               {services.map((service, index) => (
                 <motion.div
                   key={index}
@@ -144,20 +144,23 @@ const HomePage = () => {
                   transition={{ delay: index * 0.05 }}
                   viewport={{ once: true }}
                 >
-                  <Tilt tiltMaxAngleX={10} tiltMaxAngleY={10}>
-                    <Link to="/services" className="service-card-link">
-                      <div className="service-card" data-testid={`service-card-${index}`}>
-                        <div className="service-icon">{service.icon}</div>
-                        <h3 className="service-title">{service.title}</h3>
-                        <p className="service-description">{service.description}</p>
-                        <ul className="service-features">
-                          {service.features.slice(0, 3).map((feature, idx) => (
+                  <Link to="/services" className="service-card-expandable-link">
+                    <div className="service-card-expandable" data-testid={`service-card-${index}`}>
+                      <div className="service-card-header">
+                        <div className="service-icon-large">{service.icon}</div>
+                        <h3 className="service-title-expandable">{service.title}</h3>
+                      </div>
+                      
+                      <div className="service-card-expanded-content">
+                        <p className="service-description-expandable">{service.description}</p>
+                        <ul className="service-features-expandable">
+                          {service.features.map((feature, idx) => (
                             <li key={idx}>{feature}</li>
                           ))}
                         </ul>
                       </div>
-                    </Link>
-                  </Tilt>
+                    </div>
+                  </Link>
                 </motion.div>
               ))}
             </div>
