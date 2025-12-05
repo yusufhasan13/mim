@@ -30,7 +30,7 @@ const HomePage = () => {
     { icon: <Globe />, value: 20, suffix: '+', label: 'Countries Served' },
     { icon: <Users />, value: 25000, suffix: '+', label: 'Business Users' },
     { icon: <TrendingUp />, value: 30, suffix: 'B+', label: 'SMS per Annum' },
-    { icon: <MessageCircle />, value: 90, suffix: 'M+', label: 'WhatsApp Messages per Annum' },
+    { icon: <MessageCircle />, value: 90, suffix: 'M+', label: 'WhatsApp per Annum' },
     { icon: <Mail />, value: 20, suffix: 'B+', label: 'Emails per Annum' },
   ];
 
