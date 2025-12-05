@@ -46,6 +46,7 @@ function App() {
           <Route path="/admin/login" element={<AdminLoginPage />} />
           <Route path="/admin/*" element={<AdminDashboard />} />
           <Route path="/font-samples" element={<FontSamples />} />
+          <Route path="/button-colors" element={<ButtonColorOptions />} />
         </Routes>
         <Footer />
       </div>
