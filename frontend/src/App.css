@@ -503,6 +503,7 @@ body::after {
 }
 
 .hero-title {
+  font-family: var(--font-heading);
   font-size: clamp(1.8rem, 6.5vw, 4.5rem);
   font-weight: 900;
   line-height: 1.1;
@@ -517,24 +518,8 @@ body::after {
 }
 
 .hero-title-accent {
-  background: linear-gradient(135deg, #CE162F 0%, #FF6B9D 50%, #CE162F 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
+  color: #FFFFFF;
   position: relative;
-  filter: drop-shadow(0 0 30px rgba(206, 22, 47, 0.8)) drop-shadow(0 4px 10px rgba(0, 0, 0, 0.5));
-}
-
-.hero-title-accent::after {
-  content: '';
-  position: absolute;
-  bottom: -15px;
-  left: 5%;
-  right: 5%;
-  height: 3px;
-  background: linear-gradient(90deg, transparent, rgba(206, 22, 47, 0.8), transparent);
-  filter: blur(8px);
-  box-shadow: 0 0 30px rgba(206, 22, 47, 0.6);
 }
 
 .hero-subtitle {
