@@ -2806,7 +2806,7 @@ body::after {
 }
 
 .number-value {
-  font-size: clamp(2.5rem, 6vw, 3.5rem);
+  font-size: clamp(2rem, 4.8vw, 2.8rem);
   font-weight: 900;
   color: var(--navy-primary);
   margin-bottom: 0.75rem;
