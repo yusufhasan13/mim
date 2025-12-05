@@ -400,7 +400,7 @@ body::after {
 }
 
 .section-title {
-  font-size: clamp(1.75rem, 5vw, 3rem);
+  font-size: clamp(1.6rem, 4.5vw, 2.7rem);
   font-weight: 800;
   margin-bottom: clamp(0.75rem, 2vh, 1rem);
   text-align: center;
