@@ -681,9 +681,23 @@ body::after {
 
 .service-icon,
 .service-detail-icon {
-  font-size: clamp(2.5rem, 6vw, 3.5rem);
+  width: clamp(60px, 10vw, 80px);
+  height: clamp(60px, 10vw, 80px);
   margin-bottom: clamp(1rem, 3vh, 1.5rem);
-  filter: drop-shadow(0 4px 12px rgba(206, 22, 47, 0.3));
+  filter: drop-shadow(0 4px 12px rgba(206, 22, 47, 0.2));
+  object-fit: contain;
+}
+
+.service-detail-header {
+  display: flex;
+  align-items: center;
+  gap: 1.25rem;
+  margin-bottom: 1.75rem;
+}
+
+.service-detail-header .service-detail-icon {
+  width: clamp(50px, 8vw, 64px);
+  height: clamp(50px, 8vw, 64px);
 }
 
 .service-title,
