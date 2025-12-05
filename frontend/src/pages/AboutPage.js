@@ -116,8 +116,8 @@ const AboutPage = () => {
               className="executive-summary-image"
             >
               <img 
-                src="https://images.unsplash.com/photo-1451187580459-43490279c0fa?q=80&w=2072" 
-                alt="Global Network" 
+                src="https://customer-assets.emergentagent.com/job_mim-evolution/artifacts/u8cce6au_IMG_2949.jpg" 
+                alt="My Inbox Media Network" 
               />
             </motion.div>
 
