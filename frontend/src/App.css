@@ -448,7 +448,7 @@ body::after {
 }
 
 .hero-title {
-  font-size: clamp(2rem, 7vw, 5rem);
+  font-size: clamp(1.8rem, 6.5vw, 4.5rem);
   font-weight: 900;
   line-height: 1.1;
   margin-bottom: clamp(1.5rem, 4vh, 2rem);
