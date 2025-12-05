@@ -50,7 +50,7 @@ const HomePage = () => {
             </h1>
             <p className="hero-subtitle" data-testid="hero-subtitle">
               Leading IT & Telecommunication solutions provider delivering cutting-edge services
-              to 25,000+ businesses across 20+ countries for over 16 years.
+              to 25,000+ businesses across the Globe for over 16 years.
             </p>
             <div className="hero-buttons">
               <Link to="/services" className="btn btn-primary" data-testid="hero-cta-services">
