@@ -612,7 +612,7 @@ body::after {
 }
 
 .stat-value {
-  font-size: clamp(2rem, 5vw, 2.75rem);
+  font-size: clamp(1.7rem, 4.25vw, 2.35rem);
   font-weight: 900;
   color: var(--navy-primary);
   display: block;
