@@ -7,7 +7,7 @@ import sys
 from datetime import datetime
 import json
 
-class MIMAPITester:
+class MiMAPITester:
     def __init__(self, base_url="https://mim-evolution.preview.emergentagent.com/api"):
         self.base_url = base_url
         self.token = None
@@ -418,7 +418,7 @@ def main():
     print("🚀 My Inbox Media® Backend API Testing")
     print("="*60)
     
-    tester = MIMAPITester()
+    tester = MiMAPITester()
     
     # Run all tests
     tester.test_health_check()

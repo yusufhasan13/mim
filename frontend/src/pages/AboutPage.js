@@ -46,19 +46,19 @@ const AboutPage = () => {
       title: 'Scalability on Demand',
       subtitle: 'For the CTO',
       icon: <Zap />,
-      content: 'Your business environment is volatile. Demand spikes are unpredictable. MIM\'s cloud-native architecture is built on elastic scalability. Whether you are sending ten messages or ten million, our throughput adjusts dynamically. We utilize AI-driven routing to find the path of least resistance, ensuring near-zero latency delivery rates even during global network congestion.'
+      content: 'Your business environment is volatile. Demand spikes are unpredictable. MiM\'s cloud-native architecture is built on elastic scalability. Whether you are sending ten messages or ten million, our throughput adjusts dynamically. We utilize AI-driven routing to find the path of least resistance, ensuring near-zero latency delivery rates even during global network congestion.'
     },
     {
       title: 'Fortified Security & Data Sovereignty',
       subtitle: 'For the CISO',
       icon: <Shield />,
-      content: 'In the age of cyber threats, communication channels are often the most vulnerable vector. At MIM, security is not an add-on; it is the foundation. We employ end-to-end encryption and adhere to the strictest global data protection standards. Our local data centers ensure that sensitive customer data stays within national borders where required by law, mitigating legal risk and ensuring compliance for banking, healthcare, and government clients.'
+      content: 'In the age of cyber threats, communication channels are often the most vulnerable vector. At MiM, security is not an add-on; it is the foundation. We employ end-to-end encryption and adhere to the strictest global data protection standards. Our local data centers ensure that sensitive customer data stays within national borders where required by law, mitigating legal risk and ensuring compliance for banking, healthcare, and government clients.'
     },
     {
       title: 'Omnichannel Unification',
       subtitle: 'For the CMO',
       icon: <Users />,
-      content: 'The modern customer journey is non-linear. They start on WhatsApp, confirm via SMS, and engage via Email. MIM consolidates these fragmented channels into a single, cohesive ecosystem. Our "One-View" dashboard allows marketing leaders to orchestrate complex, multi-touchpoint campaigns that follow the user, not the device.'
+      content: 'The modern customer journey is non-linear. They start on WhatsApp, confirm via SMS, and engage via Email. MiM consolidates these fragmented channels into a single, cohesive ecosystem. Our "One-View" dashboard allows marketing leaders to orchestrate complex, multi-touchpoint campaigns that follow the user, not the device.'
     }
   ];
 
@@ -130,13 +130,13 @@ const AboutPage = () => {
               <h2 className="executive-summary-title">Beyond Communication. Connection.</h2>
               <div className="executive-summary-text">
                 <p>
-                  In an era where a millisecond of latency can define market leadership, My Inbox Media® (MIM) stands as the silent engine behind the world's most critical business conversations. Founded in 2010, we recognized early on that the future of enterprise was not just in speaking, but in reaching.
+                  In an era where a millisecond of latency can define market leadership, My Inbox Media® (MiM) stands as the silent engine behind the world's most critical business conversations. Founded in 2010, we recognized early on that the future of enterprise was not just in speaking, but in reaching.
                 </p>
                 <p>
                   We saw a widening gap between rapidly evolving business needs and the stagnating capabilities of traditional telecommunication providers. We set out to close that gap.
                 </p>
                 <p>
-                  Sixteen years later, MIM has evolved from a visionary startup into a multinational powerhouse in IT and telecommunication solutions. We are no longer just a service provider; we are strategic partners to Fortune 500 companies, enabling them to transcend geographical boundaries and technological limitations.
+                  Sixteen years later, MiM has evolved from a visionary startup into a multinational powerhouse in IT and telecommunication solutions. We are no longer just a service provider; we are strategic partners to Fortune 500 companies, enabling them to transcend geographical boundaries and technological limitations.
                 </p>
                 <p className="executive-highlight">
                   Our mission is simple yet profound: to ensure that when business speaks, the world listens—instantly, securely, and seamlessly.
@@ -248,7 +248,7 @@ const AboutPage = () => {
             whileInView={{ opacity: 1 }}
             viewport={{ once: true }}
           >
-            <h2 className="section-title">Why the Fortune 500 Trusts MIM</h2>
+            <h2 className="section-title">Why the Fortune 500 Trusts MiM</h2>
             
             <div className="cxo-cards-grid">
               {cxoValues.map((item, index) => (
@@ -323,7 +323,7 @@ const AboutPage = () => {
               <div className="culture-quote">
                 <p className="quote-text">
                   "Technology is our product, but service is our business. We believe that B2B technology has lost its human touch. 
-                  At MIM, we are bringing it back."
+                  At MiM, we are bringing it back."
                 </p>
               </div>
 

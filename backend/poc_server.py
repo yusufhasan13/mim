@@ -22,7 +22,7 @@ logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger(__name__)
 
 # Initialize FastAPI
-app = FastAPI(title="MIM Website POC API", version="1.0.0")
+app = FastAPI(title="MiM Website POC API", version="1.0.0")
 
 # CORS configuration
 app.add_middleware(
@@ -74,7 +74,7 @@ class ExternalDataResponse(BaseModel):
 
 
 # ============= EXTERNAL DATA SCRAPER =============
-class MIMProfileScraper:
+class MiMProfileScraper:
     """Scraper for fetching services and clients from mimprofile.e-mim.in"""
     
     BASE_URL = "https://mimprofile.e-mim.in"
@@ -88,9 +88,9 @@ class MIMProfileScraper:
                 'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36'
             }
             response = requests.get(
-                MIMProfileScraper.BASE_URL, 
+                MiMProfileScraper.BASE_URL, 
                 headers=headers, 
-                timeout=MIMProfileScraper.TIMEOUT
+                timeout=MiMProfileScraper.TIMEOUT
             )
             response.raise_for_status()
             return response.text
@@ -238,7 +238,7 @@ class MIMProfileScraper:
                 if src.startswith('http'):
                     logo_url = src
                 else:
-                    logo_url = f"{MIMProfileScraper.BASE_URL}/{src.lstrip('/')}"
+                    logo_url = f"{MiMProfileScraper.BASE_URL}/{src.lstrip('/')}"
                 
                 clients.append(ClientItem(
                     name=alt if alt else None,
@@ -276,8 +276,8 @@ async def get_external_services():
     POC User Story: Fetch services data dynamically within 2 seconds
     """
     try:
-        html_content = MIMProfileScraper.fetch_page_content()
-        services = MIMProfileScraper.extract_services(html_content)
+        html_content = MiMProfileScraper.fetch_page_content()
+        services = MiMProfileScraper.extract_services(html_content)
         
         return ExternalDataResponse(
             success=True,
@@ -302,8 +302,8 @@ async def get_external_clients():
     POC User Story: Fetch 40+ client logos when available
     """
     try:
-        html_content = MIMProfileScraper.fetch_page_content()
-        clients = MIMProfileScraper.extract_clients(html_content)
+        html_content = MiMProfileScraper.fetch_page_content()
+        clients = MiMProfileScraper.extract_clients(html_content)
         
         return ExternalDataResponse(
             success=True,

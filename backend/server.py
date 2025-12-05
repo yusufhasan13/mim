@@ -50,7 +50,7 @@ logger = logging.getLogger(__name__)
 
 
 # ============= EXTERNAL DATA SCRAPER =============
-class MIMProfileScraper:
+class MiMProfileScraper:
     """Scraper for fetching services and clients from mimprofile.e-mim.in"""
     
     BASE_URL = "https://mimprofile.e-mim.in"
@@ -64,17 +64,17 @@ class MIMProfileScraper:
             'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36'
         }
         
-        for attempt in range(MIMProfileScraper.MAX_RETRIES):
+        for attempt in range(MiMProfileScraper.MAX_RETRIES):
             try:
                 response = requests.get(
-                    MIMProfileScraper.BASE_URL, 
+                    MiMProfileScraper.BASE_URL, 
                     headers=headers, 
-                    timeout=MIMProfileScraper.TIMEOUT
+                    timeout=MiMProfileScraper.TIMEOUT
                 )
                 response.raise_for_status()
                 return response.text
             except requests.Timeout:
-                if attempt < MIMProfileScraper.MAX_RETRIES - 1:
+                if attempt < MiMProfileScraper.MAX_RETRIES - 1:
                     logger.warning(f"Timeout on attempt {attempt + 1}, retrying...")
                     continue
                 else:
@@ -399,7 +399,7 @@ async def get_external_services():
     """Fetch services data from external source"""
     try:
         # Services are predefined, no need to fetch HTML
-        services = MIMProfileScraper.extract_services("")
+        services = MiMProfileScraper.extract_services("")
         
         return {
             "success": True,
@@ -422,7 +422,7 @@ async def get_external_clients():
     """Fetch client logos from external source"""
     try:
         # Clients are predefined, no need to fetch HTML
-        clients = MIMProfileScraper.extract_clients("")
+        clients = MiMProfileScraper.extract_clients("")
         
         return {
             "success": True,

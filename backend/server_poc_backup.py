@@ -63,7 +63,7 @@ class ExternalDataResponse(BaseModel):
 
 
 # ============= EXTERNAL DATA SCRAPER =============
-class MIMProfileScraper:
+class MiMProfileScraper:
     """Scraper for fetching services and clients from mimprofile.e-mim.in"""
     
     BASE_URL = "https://mimprofile.e-mim.in"
@@ -77,21 +77,21 @@ class MIMProfileScraper:
             'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36'
         }
         
-        for attempt in range(MIMProfileScraper.MAX_RETRIES):
+        for attempt in range(MiMProfileScraper.MAX_RETRIES):
             try:
                 response = requests.get(
-                    MIMProfileScraper.BASE_URL, 
+                    MiMProfileScraper.BASE_URL, 
                     headers=headers, 
-                    timeout=MIMProfileScraper.TIMEOUT
+                    timeout=MiMProfileScraper.TIMEOUT
                 )
                 response.raise_for_status()
                 return response.text
             except requests.Timeout as e:
-                if attempt < MIMProfileScraper.MAX_RETRIES - 1:
+                if attempt < MiMProfileScraper.MAX_RETRIES - 1:
                     logging.warning(f"Timeout on attempt {attempt + 1}, retrying...")
                     continue
                 else:
-                    logging.error(f"Failed after {MIMProfileScraper.MAX_RETRIES} attempts: Timeout")
+                    logging.error(f"Failed after {MiMProfileScraper.MAX_RETRIES} attempts: Timeout")
                     raise HTTPException(
                         status_code=status.HTTP_504_GATEWAY_TIMEOUT,
                         detail="External data source is not responding"
@@ -338,8 +338,8 @@ async def get_external_services():
     Fetch services data from external source (mimprofile.e-mim.in)
     """
     try:
-        html_content = MIMProfileScraper.fetch_page_content()
-        services = MIMProfileScraper.extract_services(html_content)
+        html_content = MiMProfileScraper.fetch_page_content()
+        services = MiMProfileScraper.extract_services(html_content)
         
         return ExternalDataResponse(
             success=True,
@@ -363,8 +363,8 @@ async def get_external_clients():
     Fetch client logos from external source (mimprofile.e-mim.in)
     """
     try:
-        html_content = MIMProfileScraper.fetch_page_content()
-        clients = MIMProfileScraper.extract_clients(html_content)
+        html_content = MiMProfileScraper.fetch_page_content()
+        clients = MiMProfileScraper.extract_clients(html_content)
         
         return ExternalDataResponse(
             success=True,
