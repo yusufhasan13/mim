@@ -95,7 +95,7 @@ class MIMProfileScraper:
             {
                 "title": "Omni Channel Solutions",
                 "description": "30+ Billion messages per annum across SMS, WhatsApp, RCS, OBD, and Gamification with 99.9% delivery rate",
-                "icon": "🌐",
+                "icon": "https://img.icons8.com/3d-fluency/200/communication.png",
                 "features": [
                     "Bulk SMS & WhatsApp API Integration with real-time analytics",
                     "Rich Media Messaging (Images, PDFs, Videos) across channels",
@@ -108,7 +108,7 @@ class MIMProfileScraper:
             {
                 "title": "SMS Solutions",
                 "description": "30+ Billion SMS per annum with cutting-edge features and global reach",
-                "icon": "📱",
+                "icon": "https://img.icons8.com/3d-fluency/200/sms.png",
                 "features": [
                     "Bulk SMS API Integration",
                     "Rich Media SMS (Images, PDFs, Videos)",
@@ -121,7 +121,7 @@ class MIMProfileScraper:
             {
                 "title": "WhatsApp Business API",
                 "description": "Enhanced engagement with 50M+ messages annually and verified business accounts",
-                "icon": "💬",
+                "icon": "https://img.icons8.com/3d-fluency/200/whatsapp.png",
                 "features": [
                     "Business Platform Integration",
                     "Enhanced Customer Engagement",
@@ -134,7 +134,7 @@ class MIMProfileScraper:
             {
                 "title": "VOCAL BOX",
                 "description": "All-in-one voice communication platform with IVR, OBD, Toll-Free, and Missed Call solutions",
-                "icon": "🎙️",
+                "icon": "https://img.icons8.com/3d-fluency/200/microphone.png",
                 "features": [
                     "Interactive Voice Response (IVR) Systems",
                     "Outbound Dialing (OBD) for campaigns",
@@ -149,7 +149,7 @@ class MIMProfileScraper:
             {
                 "title": "Email Services",
                 "description": "20+ Billion emails annually with enterprise-grade deliverability and infrastructure",
-                "icon": "📧",
+                "icon": "https://img.icons8.com/3d-fluency/200/email.png",
                 "features": [
                     "High Deliverability Rates",
                     "Robust Infrastructure",
@@ -162,7 +162,7 @@ class MIMProfileScraper:
             {
                 "title": "RCS Messaging",
                 "description": "Next-generation messaging with rich content and interactive features for modern engagement",
-                "icon": "📲",
+                "icon": "https://img.icons8.com/3d-fluency/200/chat.png",
                 "features": [
                     "Rich Content Support",
                     "Interactive Buttons",
@@ -175,7 +175,7 @@ class MIMProfileScraper:
             {
                 "title": "Chatbot Solutions",
                 "description": "AI-powered customer service automation with intelligent conversational capabilities",
-                "icon": "🤖",
+                "icon": "https://img.icons8.com/3d-fluency/200/bot.png",
                 "features": [
                     "24/7 Customer Support",
                     "Natural Language Processing",
@@ -188,7 +188,7 @@ class MIMProfileScraper:
             {
                 "title": "API Integration",
                 "description": "Seamless integration with enterprise systems and third-party platforms",
-                "icon": "🔌",
+                "icon": "https://img.icons8.com/3d-fluency/200/api-settings.png",
                 "features": [
                     "RESTful APIs",
                     "Comprehensive Documentation",
@@ -201,7 +201,7 @@ class MIMProfileScraper:
             {
                 "title": "Gamification",
                 "description": "Engage customers with interactive experiences, loyalty programs, and reward systems",
-                "icon": "🎮",
+                "icon": "https://img.icons8.com/3d-fluency/200/controller.png",
                 "features": [
                     "Customer Engagement",
                     "Loyalty Programs",
@@ -214,7 +214,7 @@ class MIMProfileScraper:
             {
                 "title": "QR & Loyalty Programs",
                 "description": "Drive customer retention and engagement with digital loyalty solutions",
-                "icon": "🎁",
+                "icon": "https://img.icons8.com/3d-fluency/200/qr-code.png",
                 "features": [
                     "QR Code Generation",
                     "Digital Loyalty Cards",
@@ -227,7 +227,7 @@ class MIMProfileScraper:
             {
                 "title": "Outdoor/Interactive LED",
                 "description": "High-impact digital signage solutions with LED screens and interactive displays for maximum visibility",
-                "icon": "📺",
+                "icon": "https://img.icons8.com/3d-fluency/200/tv.png",
                 "features": [
                     "Large Format LED Displays & Video Walls",
                     "Interactive Touch Screen Signage",
@@ -242,7 +242,7 @@ class MIMProfileScraper:
             {
                 "title": "Software Solutions",
                 "description": "Custom enterprise software development including CRM, DMS, Loyalty Programs, and tailored business applications",
-                "icon": "💻",
+                "icon": "https://img.icons8.com/3d-fluency/200/software.png",
                 "features": [
                     "CRM (Customer Relationship Management) Systems",
                     "DMS (Document Management Systems)",
