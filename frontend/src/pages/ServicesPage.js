@@ -59,7 +59,7 @@ const ServicesPage = () => {
                   <Tilt tiltMaxAngleX={5} tiltMaxAngleY={5}>
                     <div className="service-detail-card" data-testid={`service-detail-${index}`}>
                       <div className="service-detail-header">
-                        <div className="service-detail-icon">{service.icon}</div>
+                        <img src={service.icon} alt={service.title} className="service-detail-icon" />
                         <h3 className="service-detail-title">{service.title}</h3>
                       </div>
                       <p className="service-detail-description">{service.description}</p>
