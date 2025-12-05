@@ -31,6 +31,7 @@ function App() {
       <div className="App">
         <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800;900&family=Plus+Jakarta+Sans:wght@400;500;600;700;800;900&family=Manrope:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
         <Toaster position="top-right" richColors />
+        <ScrollToTop />
         <Navigation />
         <Routes>
           <Route path="/" element={<HomePage />} />
