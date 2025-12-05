@@ -2528,3 +2528,20 @@ body::after {
     gap: 0.75rem;
   }
 }
+
+/* Button Icon Animations */
+.btn-icon {
+  transition: transform 0.4s ease;
+}
+
+.btn:hover .btn-icon {
+  transform: scale(1.2) rotate(5deg);
+}
+
+.btn-primary:hover .btn-icon {
+  filter: drop-shadow(0 0 8px rgba(255, 255, 255, 0.6));
+}
+
+.btn-secondary:hover .btn-icon {
+  filter: drop-shadow(0 0 8px rgba(255, 255, 255, 0.6));
+}
