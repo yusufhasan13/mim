@@ -62,7 +62,7 @@ const AboutPage = () => {
               and an obsession with customer success.
             </p>
             <p className="section-text">
-              Today, we proudly serve 25,000+ businesses across 20+ countries, processing over 30 billion SMS,
+              Today, we proudly serve 25,000+ businesses across the Globe, processing over 30 billion SMS,
               50 million WhatsApp messages, and 20 billion emails annually. Our success is built on a foundation
               of trust, technological excellence, and a deep understanding of our clients' needs.
             </p>
