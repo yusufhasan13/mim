@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import CountUp from 'react-countup';
 import Tilt from 'react-parallax-tilt';
-import { ArrowRight, Globe, Users, Building2, TrendingUp, MessageCircle, Mail } from 'lucide-react';
+import { ArrowRight, Globe, Users, Building2, TrendingUp, MessageCircle, Mail, Send, Sparkles } from 'lucide-react';
 import { apiService } from '../utils/api';
 
 const HomePage = () => {
