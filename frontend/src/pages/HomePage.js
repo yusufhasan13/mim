@@ -66,22 +66,22 @@ const HomePage = () => {
               <span className="badge">ISO Certified</span>
               <span className="badge">GDPR Compliant</span>
             </div>
-          </motion.div>
-        </div>
 
-        {/* Global Presence Ribbon */}
-        <div className="global-ribbon">
-          <span className="ribbon-text">Global Presence:</span>
-          <div className="ribbon-flags">
-            <span>🇮🇳 India</span>
-            <span>🇦🇪 UAE</span>
-            <span>🇨🇦 Canada</span>
-            <span>🇺🇸 USA</span>
-            <span>🇸🇦 KSA</span>
-            <span>🇪🇬 Egypt</span>
-            <span>🇦🇺 Australia</span>
-            <span>🇶🇦 Qatar</span>
-          </div>
+            {/* Global Presence Ribbon - Inside Glass Card */}
+            <div className="global-ribbon-inside">
+              <span className="ribbon-text">Global Presence:</span>
+              <div className="ribbon-flags">
+                <span>🇮🇳 India</span>
+                <span>🇦🇪 UAE</span>
+                <span>🇨🇦 Canada</span>
+                <span>🇺🇸 USA</span>
+                <span>🇸🇦 KSA</span>
+                <span>🇪🇬 Egypt</span>
+                <span>🇦🇺 Australia</span>
+                <span>🇶🇦 Qatar</span>
+              </div>
+            </div>
+          </motion.div>
         </div>
       </section>
 
