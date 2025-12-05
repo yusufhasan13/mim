@@ -22,7 +22,7 @@ const AboutPage = () => {
     {
       icon: <Globe2 />,
       title: 'Global Reach',
-      description: 'With presence in 20+ countries and 11 strategic offices, we ensure local support backed by global expertise, serving 25,000+ business users worldwide.'
+      description: 'With presence across the Globe and 11 strategic offices, we ensure local support backed by global expertise, serving 25,000+ business users worldwide.'
     }
   ];
 
