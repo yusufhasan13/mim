@@ -54,10 +54,11 @@ const HomePage = () => {
             </p>
             <div className="hero-buttons">
               <Link to="/services" className="btn btn-primary" data-testid="hero-cta-services">
+                <Sparkles size={20} className="btn-icon" />
                 Explore Our Services
-                <ArrowRight size={20} />
               </Link>
               <Link to="/contact" className="btn btn-secondary" data-testid="hero-cta-contact">
+                <Send size={20} className="btn-icon" />
                 Get in Touch
               </Link>
             </div>
