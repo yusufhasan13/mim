@@ -17,6 +17,7 @@ import ContactPage from './pages/ContactPage';
 import CareersPage from './pages/CareersPage';
 import AdminLoginPage from './pages/AdminLoginPage';
 import AdminDashboard from './pages/AdminDashboard';
+import FontSamples from './components/FontSamples';
 
 // Layout Components
 import Navigation from './components/Navigation';
@@ -26,6 +27,7 @@ function App() {
   return (
     <Router>
       <div className="App">
+        <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800;900&family=Plus+Jakarta+Sans:wght@400;500;600;700;800;900&family=Manrope:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
         <Toaster position="top-right" richColors />
         <Navigation />
         <Routes>
@@ -42,6 +44,7 @@ function App() {
           <Route path="/careers" element={<CareersPage />} />
           <Route path="/admin/login" element={<AdminLoginPage />} />
           <Route path="/admin/*" element={<AdminDashboard />} />
+          <Route path="/font-samples" element={<FontSamples />} />
         </Routes>
         <Footer />
       </div>
