@@ -1,5 +1,5 @@
 /* My Inbox Media® - Light Liquid Glass Aesthetic */
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Plus+Jakarta+Sans:wght@400;500;600;700;800;900&display=swap');
 
 /* ============= ROOT VARIABLES ============= */
 :root {
@@ -17,6 +17,7 @@
   --bg-lighter: #F3F4F6;
   
   --font-system: -apple-system, BlinkMacSystemFont, 'Inter', 'Segoe UI', 'Roboto', system-ui, sans-serif;
+  --font-heading: 'Plus Jakarta Sans', sans-serif;
 }
 
 /* ============= ANIMATED GRADIENT BACKGROUND ============= */
