@@ -41,7 +41,7 @@ const ClientsPage = () => {
           >
             <h1 className="page-title" data-testid="clients-title">Our Clients</h1>
             <p className="page-subtitle">
-              Trusted by 25,000+ businesses across 20+ countries and multiple industries
+              Trusted by 25,000+ businesses across the Globe and multiple industries
             </p>
           </motion.div>
         </div>
