@@ -2258,3 +2258,149 @@ body::after {
   color: var(--orange-primary);
   font-weight: 500;
 }
+
+/* ============= EXPANDABLE SERVICE CARDS (HOMEPAGE) ============= */
+.services-grid-expandable {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(min(280px, 100%), 1fr));
+  gap: clamp(1.5rem, 3vw, 2rem);
+  margin-top: clamp(2.5rem, 6vh, 4rem);
+}
+
+.service-card-expandable-link {
+  text-decoration: none;
+  color: inherit;
+  display: block;
+}
+
+.service-card-expandable {
+  background: rgba(255, 255, 255, 0.7);
+  backdrop-filter: blur(24px) saturate(180%);
+  border: 1px solid var(--glass-border);
+  border-radius: clamp(20px, 4vw, 28px);
+  padding: clamp(1.5rem, 4vw, 2rem);
+  box-shadow: 
+    0 8px 32px rgba(30, 42, 68, 0.08),
+    inset 0 1px 0 rgba(255, 255, 255, 0.8);
+  transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+  overflow: hidden;
+  cursor: pointer;
+  min-height: 120px;
+}
+
+.service-card-header {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+}
+
+.service-icon-large {
+  font-size: clamp(3rem, 7vw, 4rem);
+  filter: drop-shadow(0 4px 16px rgba(206, 22, 47, 0.3));
+  transition: transform 0.4s;
+}
+
+.service-title-expandable {
+  font-size: clamp(1.125rem, 3vw, 1.375rem);
+  font-weight: 700;
+  color: var(--navy-primary);
+  letter-spacing: -0.02em;
+  margin: 0;
+  transition: color 0.3s;
+}
+
+/* Expanded content - hidden by default */
+.service-card-expanded-content {
+  max-height: 0;
+  opacity: 0;
+  overflow: hidden;
+  transition: max-height 0.5s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.4s ease;
+  margin-top: 0;
+}
+
+.service-description-expandable {
+  color: var(--glass-text-muted);
+  margin: 1.5rem 0 1rem;
+  line-height: 1.7;
+  font-size: clamp(0.9rem, 2vw, 1rem);
+}
+
+.service-features-expandable {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.625rem;
+  margin: 0;
+  padding: 0;
+}
+
+.service-features-expandable li {
+  padding: 0.5rem 0;
+  color: var(--glass-text-muted);
+  font-size: clamp(0.85rem, 2vw, 0.9rem);
+  line-height: 1.5;
+  display: flex;
+  align-items: flex-start;
+  gap: 0.625rem;
+}
+
+.service-features-expandable li:before {
+  content: "✓";
+  color: var(--orange-primary);
+  font-weight: bold;
+  flex-shrink: 0;
+  filter: drop-shadow(0 0 8px var(--orange-glow));
+}
+
+/* Hover state - expand card */
+.service-card-expandable:hover {
+  background: rgba(255, 255, 255, 0.9);
+  border-color: rgba(206, 22, 47, 0.4);
+  box-shadow: 
+    0 20px 60px rgba(30, 42, 68, 0.15),
+    0 0 80px rgba(206, 22, 47, 0.2),
+    inset 0 2px 0 rgba(255, 255, 255, 0.95);
+  transform: translateY(-8px);
+  min-height: auto;
+  z-index: 10;
+}
+
+.service-card-expandable:hover .service-icon-large {
+  transform: scale(1.1);
+}
+
+.service-card-expandable:hover .service-title-expandable {
+  color: var(--orange-primary);
+}
+
+.service-card-expandable:hover .service-card-expanded-content {
+  max-height: 800px;
+  opacity: 1;
+  margin-top: 1rem;
+}
+
+/* Responsive adjustments for expandable cards */
+@media (max-width: 768px) {
+  .services-grid-expandable {
+    grid-template-columns: 1fr;
+  }
+  
+  .service-card-expandable {
+    min-height: 100px;
+  }
+}
+
+@media (min-width: 769px) and (max-width: 1200px) {
+  .services-grid-expandable {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 1201px) {
+  .services-grid-expandable {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
