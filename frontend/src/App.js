@@ -18,6 +18,7 @@ import CareersPage from './pages/CareersPage';
 import AdminLoginPage from './pages/AdminLoginPage';
 import AdminDashboard from './pages/AdminDashboard';
 import FontSamples from './components/FontSamples';
+import ButtonColorOptions from './components/ButtonColorOptions';
 
 // Layout Components
 import Navigation from './components/Navigation';
