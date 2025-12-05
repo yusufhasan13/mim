@@ -51,11 +51,18 @@ const Footer = () => {
           <div className="footer-section">
             <h4 className="footer-heading">Services</h4>
             <ul className="footer-links">
-              <li>SMS Solutions</li>
-              <li>WhatsApp Business API</li>
-              <li>Email Services</li>
-              <li>RCS Messaging</li>
-              <li>Chatbot Solutions</li>
+              <li><Link to="/services" data-testid="footer-service-omni">Omni Channel Solutions</Link></li>
+              <li><Link to="/services" data-testid="footer-service-sms">SMS Solutions</Link></li>
+              <li><Link to="/services" data-testid="footer-service-whatsapp">WhatsApp Business API</Link></li>
+              <li><Link to="/services" data-testid="footer-service-vocal">VOCAL BOX</Link></li>
+              <li><Link to="/services" data-testid="footer-service-email">Email Services</Link></li>
+              <li><Link to="/services" data-testid="footer-service-rcs">RCS Messaging</Link></li>
+              <li><Link to="/services" data-testid="footer-service-chatbot">Chatbot Solutions</Link></li>
+              <li><Link to="/services" data-testid="footer-service-api">API Integration</Link></li>
+              <li><Link to="/services" data-testid="footer-service-gamification">Gamification</Link></li>
+              <li><Link to="/services" data-testid="footer-service-qr">QR & Loyalty Programs</Link></li>
+              <li><Link to="/services" data-testid="footer-service-led">Outdoor/Interactive LED</Link></li>
+              <li><Link to="/services" data-testid="footer-service-software">Software Solutions</Link></li>
             </ul>
           </div>
 
