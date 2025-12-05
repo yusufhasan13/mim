@@ -147,7 +147,9 @@ const HomePage = () => {
                   <Link to="/services" className="service-card-expandable-link">
                     <div className="service-card-expandable" data-testid={`service-card-${index}`}>
                       <div className="service-card-header">
-                        <div className="service-icon-large">{service.icon}</div>
+                        <div className="service-icon-large">
+                          <img src={service.icon} alt={service.title} />
+                        </div>
                         <h3 className="service-title-expandable">{service.title}</h3>
                       </div>
                       
