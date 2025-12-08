@@ -458,7 +458,7 @@ body::after {
   color: var(--glass-text-muted);
 }
 
-/* ============= HOME PAGE WITH PURE WHITE BACKGROUND ============= */
+/* ============= HOME PAGE WITH BACKGROUND IMAGE ============= */
 .hero-section {
   padding: 0;
   position: relative;
@@ -470,14 +470,65 @@ body::after {
   background: #FFFFFF;
 }
 
-/* Remove background image - keep it ultra white and plain */
+/* Custom Background Image - 40% Visible */
 .hero-section::before {
-  display: none;
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url('https://customer-assets.emergentagent.com/job_mim-evolution/artifacts/x96k4u5p_IMG_3095.JPG');
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-attachment: scroll;
+  opacity: 0.4;
+  z-index: 0;
 }
 
-/* Remove dark overlay */
+/* White overlay for 40% visibility (60% white overlay) */
 .hero-section::after {
-  display: none;
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(255, 255, 255, 0.6);
+  z-index: 1;
+}
+
+/* Mobile optimization */
+@media (max-width: 768px) {
+  .hero-section::before {
+    background-size: cover;
+    background-position: center;
+  }
+}
+
+/* Tablet optimization */
+@media (min-width: 769px) and (max-width: 1200px) {
+  .hero-section::before {
+    background-size: cover;
+    background-position: center;
+  }
+}
+
+/* Large desktop optimization */
+@media (min-width: 1920px) {
+  .hero-section::before {
+    background-size: cover;
+    background-position: center;
+  }
+}
+
+/* 4K and ultra-wide */
+@media (min-width: 2560px) {
+  .hero-section::before {
+    background-size: cover;
+    background-position: center;
+  }
 }
 
 .hero-content {
