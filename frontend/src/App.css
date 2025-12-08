@@ -2440,32 +2440,7 @@ body::after {
   filter: drop-shadow(0 0 8px var(--orange-glow));
 }
 
-/* Hover state - expand card */
-.service-card-expandable:hover {
-  background: rgba(255, 255, 255, 0.9);
-  border-color: rgba(206, 22, 47, 0.4);
-  box-shadow: 
-    0 20px 60px rgba(30, 42, 68, 0.15),
-    0 0 80px rgba(206, 22, 47, 0.2),
-    inset 0 2px 0 rgba(255, 255, 255, 0.95);
-  transform: translateY(-8px);
-  min-height: auto;
-  z-index: 10;
-}
-
-.service-card-expandable:hover .service-icon-large {
-  transform: scale(1.1);
-}
-
-.service-card-expandable:hover .service-title-expandable {
-  color: var(--orange-primary);
-}
-
-.service-card-expandable:hover .service-card-expanded-content {
-  max-height: 1000px;
-  opacity: 1;
-  margin-top: 1rem;
-}
+/* Hover state - expand card - REMOVED (now in media query above for desktop only) */
 
 /* Responsive adjustments for expandable cards */
 @media (max-width: 768px) {
