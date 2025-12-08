@@ -128,26 +128,45 @@ const BookMeetingPopup = ({ isOpen, onClose }) => {
 
               <div className="form-row">
                 <div className="form-group">
-                  <label htmlFor="phone">Phone Number *</label>
-                  <input
-                    type="tel"
-                    id="phone"
-                    name="phone"
-                    value={formData.phone}
-                    onChange={handleChange}
-                    required
-                    placeholder="+91 12345 67890"
-                  />
+                  <label htmlFor="phone">Mobile Number *</label>
+                  <div className="phone-input-group">
+                    <select
+                      name="countryCode"
+                      value={formData.countryCode}
+                      onChange={handleChange}
+                      className="country-code-select"
+                      required
+                    >
+                      <option value="+91">🇮🇳 +91</option>
+                      <option value="+971">🇦🇪 +971</option>
+                      <option value="+1">🇺🇸 +1</option>
+                      <option value="+1">🇨🇦 +1</option>
+                      <option value="+966">🇸🇦 +966</option>
+                      <option value="+20">🇪🇬 +20</option>
+                      <option value="+61">🇦🇺 +61</option>
+                      <option value="+974">🇶🇦 +974</option>
+                    </select>
+                    <input
+                      type="tel"
+                      id="phone"
+                      name="phone"
+                      value={formData.phone}
+                      onChange={handleChange}
+                      required
+                      placeholder="1234567890"
+                    />
+                  </div>
                 </div>
 
                 <div className="form-group">
-                  <label htmlFor="company">Company Name</label>
+                  <label htmlFor="company">Company Name *</label>
                   <input
                     type="text"
                     id="company"
                     name="company"
                     value={formData.company}
                     onChange={handleChange}
+                    required
                     placeholder="Your Company"
                   />
                 </div>
