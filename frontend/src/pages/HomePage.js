@@ -74,7 +74,7 @@ const HomePage = () => {
               </Link>
               <Link to="/contact" className="btn btn-secondary" data-testid="hero-cta-contact">
                 <Send size={20} className="btn-icon" />
-                Get in Touch
+                Let's Talk
               </Link>
             </div>
             <div className="hero-badges">
