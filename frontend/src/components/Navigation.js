@@ -11,9 +11,9 @@ const Navigation = () => {
     { path: '/about', label: 'About' },
     { path: '/services', label: 'Services' },
     { path: '/clients', label: 'Clients' },
-    { path: '/case-studies', label: 'Case Studies' },
+    // { path: '/case-studies', label: 'Case Studies' }, // Hidden - can be enabled from admin panel
     // { path: '/blog', label: 'Blog' }, // Hidden - can be enabled from admin panel
-    { path: '/testimonials', label: 'Testimonials' },
+    // { path: '/testimonials', label: 'Testimonials' }, // Hidden - can be enabled from admin panel
     { path: '/careers', label: 'Careers' },
     { path: '/contact', label: 'Contact' },
   ];
