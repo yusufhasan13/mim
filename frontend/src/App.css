@@ -1758,13 +1758,15 @@ body::after {
 .footer-stat .stat-value {
   font-size: 1.75rem;
   font-weight: 800;
-  color: var(--orange-primary);
+  color: #3B82F6;
   letter-spacing: -0.02em;
+  text-shadow: 0 0 30px rgba(59, 130, 246, 0.8);
 }
 
 .footer-stat .stat-label {
   font-size: 0.875rem;
-  color: var(--glass-text-muted);
+  color: rgba(255, 255, 255, 0.85);
+  font-weight: 600;
 }
 
 .footer-links {
