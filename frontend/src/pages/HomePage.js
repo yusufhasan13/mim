@@ -11,6 +11,7 @@ const HomePage = () => {
   const [services, setServices] = useState([]);
   const [loading, setLoading] = useState(true);
   const [expandedMobile, setExpandedMobile] = useState(null);
+  const [showMeetingPopup, setShowMeetingPopup] = useState(false);
 
   useEffect(() => {
     fetchServices();
