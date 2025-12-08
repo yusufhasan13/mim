@@ -3129,3 +3129,83 @@ body::after {
   font-size: 0.9rem;
   letter-spacing: 0.05em;
 }
+
+/* Service Explore Button (inside expanded card) */
+.service-explore-btn {
+  margin-top: 1.5rem;
+  padding: 0.875rem 1.5rem;
+  background: linear-gradient(135deg, var(--orange-primary), #E91E45);
+  color: #FFFFFF;
+  border-radius: 12px;
+  font-weight: 600;
+  font-size: 0.9rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  box-shadow: 0 4px 16px rgba(206, 22, 47, 0.3);
+  transition: all 0.3s;
+}
+
+.service-card-expandable:hover .service-explore-btn {
+  background: linear-gradient(135deg, #E91E45, var(--orange-primary));
+  box-shadow: 0 6px 24px rgba(206, 22, 47, 0.4);
+  transform: translateY(-2px);
+}
+
+.explore-arrow {
+  font-size: 1.25rem;
+  transition: transform 0.3s;
+}
+
+.service-card-expandable:hover .explore-arrow {
+  transform: translateX(4px);
+}
+
+/* Mobile expanded state */
+.service-card-expandable.mobile-expanded .service-card-expanded-content {
+  max-height: 1000px;
+  opacity: 1;
+  margin-top: 1rem;
+}
+
+.service-card-expandable.mobile-expanded {
+  background: rgba(255, 255, 255, 0.9);
+  border-color: rgba(206, 22, 47, 0.4);
+  box-shadow: 
+    0 20px 60px rgba(30, 42, 68, 0.15),
+    0 0 80px rgba(206, 22, 47, 0.2);
+}
+
+.service-card-expandable.mobile-expanded .service-title-expandable {
+  color: var(--orange-primary);
+}
+
+/* Ensure only hovered card expands on desktop */
+@media (min-width: 769px) {
+  .service-card-expandable-link:hover .service-card-expandable {
+    background: rgba(255, 255, 255, 0.9);
+    border-color: rgba(206, 22, 47, 0.4);
+    box-shadow: 
+      0 20px 60px rgba(30, 42, 68, 0.15),
+      0 0 80px rgba(206, 22, 47, 0.2),
+      inset 0 2px 0 rgba(255, 255, 255, 0.95);
+    transform: translateY(-8px);
+    min-height: auto;
+    z-index: 10;
+  }
+
+  .service-card-expandable-link:hover .service-icon-large {
+    transform: scale(1.1);
+  }
+
+  .service-card-expandable-link:hover .service-title-expandable {
+    color: var(--orange-primary);
+  }
+
+  .service-card-expandable-link:hover .service-card-expanded-content {
+    max-height: 1000px;
+    opacity: 1;
+    margin-top: 1rem;
+  }
+}
