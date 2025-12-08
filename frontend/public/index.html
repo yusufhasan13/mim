@@ -246,25 +246,29 @@
         }
         </script>
         
-        <!-- Local Business Schema for UAE -->
+        <!-- WebSite Schema for Search -->
         <script type="application/ld+json">
         {
           "@context": "https://schema.org",
-          "@type": "LocalBusiness",
-          "name": "My Inbox Media® Dubai",
-          "image": "https://myinboxmedia.com/mim-office-dubai.jpg",
-          "priceRange": "$$",
-          "address": {
-            "@type": "PostalAddress",
-            "addressCountry": "AE",
-            "addressRegion": "Dubai",
-            "addressLocality": "Dubai"
+          "@type": "WebSite",
+          "name": "My Inbox Media®",
+          "alternateName": "MiM",
+          "url": "https://myinboxmedia.com",
+          "description": "Global CPaaS and telecommunication solutions across 8 countries",
+          "publisher": {
+            "@type": "Organization",
+            "name": "My Inbox Media®",
+            "logo": {
+              "@type": "ImageObject",
+              "url": "https://myinboxmedia.com/logo-mim.png"
+            }
           },
-          "telephone": "+971-4-123-4567",
-          "email": "support@myinboxmedia.com",
-          "openingHours": "Mo-Fr 09:00-18:00",
-          "paymentAccepted": "AED, USD, EUR",
-          "currenciesAccepted": "AED, USD"
+          "potentialAction": {
+            "@type": "SearchAction",
+            "target": "https://myinboxmedia.com/search?q={search_term_string}",
+            "query-input": "required name=search_term_string"
+          },
+          "inLanguage": ["en", "ar", "hi", "fr"]
         }
         </script>
         <!--
