@@ -47,9 +47,49 @@ const ClientsPage = () => {
         </div>
       </section>
 
-      {/* Client Logos */}
+      {/* Industries Section - Above Client Logos */}
+      <section className="industries-section">
+        <div className="container">
+          <motion.div
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            viewport={{ once: true }}
+          >
+            <h2 className="section-title">Industries We Serve</h2>
+            <div className="industries-grid">
+              {['Banking & Finance', 'Automotive', 'Retail & Consumer', 'Media & Entertainment', 'Real Estate & Hospitality', 'Pharma & Healthcare', 'Education & Training', 'Food & Beverage'].map((industry, index) => (
+                <motion.div
+                  key={index}
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{ delay: index * 0.1 }}
+                  viewport={{ once: true }}
+                >
+                  <div className="industry-card" data-testid={`industry-${index}`}>
+                    <h3>{industry}</h3>
+                    <p>Customized solutions for your industry needs</p>
+                  </div>
+                </motion.div>
+              ))}
+            </div>
+          </motion.div>
+        </div>
+      </section>
+
+      {/* Client Logos Section with New Heading */}
       <section className="content-section">
         <div className="container">
+          <motion.div
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            viewport={{ once: true }}
+          >
+            <h2 className="section-title">Powering the World's Leading Brands</h2>
+            <p className="section-subtitle">
+              Trusted by industry leaders across the Globe
+            </p>
+          </motion.div>
+          
           {loading ? (
             <div className="loading-spinner" data-testid="clients-loading">Loading clients...</div>
           ) : (
@@ -79,35 +119,6 @@ const ClientsPage = () => {
               ))}
             </div>
           )}
-        </div>
-      </section>
-
-      {/* Industries */}
-      <section className="industries-section">
-        <div className="container">
-          <motion.div
-            initial={{ opacity: 0 }}
-            whileInView={{ opacity: 1 }}
-            viewport={{ once: true }}
-          >
-            <h2 className="section-title">Industries We Serve</h2>
-            <div className="industries-grid">
-              {['Banking & Finance', 'Automotive', 'Retail & Consumer', 'Media & Entertainment', 'Real Estate & Hospitality', 'Pharma & Healthcare', 'Education & Training', 'Food & Beverage'].map((industry, index) => (
-                <motion.div
-                  key={index}
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  transition={{ delay: index * 0.1 }}
-                  viewport={{ once: true }}
-                >
-                  <div className="industry-card" data-testid={`industry-${index}`}>
-                    <h3>{industry}</h3>
-                    <p>Customized solutions for your industry needs</p>
-                  </div>
-                </motion.div>
-              ))}
-            </div>
-          </motion.div>
         </div>
       </section>
     </div>
