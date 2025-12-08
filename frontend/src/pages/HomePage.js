@@ -87,14 +87,14 @@ const HomePage = () => {
             <div className="global-ribbon-inside">
               <span className="ribbon-text">Global Presence:</span>
               <div className="ribbon-flags">
-                <span>🇮🇳 India</span>
-                <span>🇦🇪 UAE</span>
-                <span>🇨🇦 Canada</span>
-                <span>🇺🇸 USA</span>
-                <span>🇸🇦 KSA</span>
-                <span>🇪🇬 Egypt</span>
-                <span>🇦🇺 Australia</span>
-                <span>🇶🇦 Qatar</span>
+                <span data-flag="🇮🇳">India</span>
+                <span data-flag="🇦🇪">UAE</span>
+                <span data-flag="🇨🇦">Canada</span>
+                <span data-flag="🇺🇸">USA</span>
+                <span data-flag="🇸🇦">KSA</span>
+                <span data-flag="🇪🇬">Egypt</span>
+                <span data-flag="🇦🇺">Australia</span>
+                <span data-flag="🇶🇦">Qatar</span>
               </div>
             </div>
           </motion.div>
