@@ -76,7 +76,7 @@ const Footer = () => {
                 <Phone size={18} />
                 <div>
                   <span>🇮🇳 +91 801 022 1100</span>
-                  <span>🇦🇪 +971 (0)4 123-4567</span>
+                  <span>🇦🇪 +971 4 770 1581</span>
                 </div>
               </li>
               <li>
