@@ -1563,7 +1563,7 @@ body::after {
 
 /* ============= FOOTER ============= */
 .footer {
-  background: var(--navy-primary);
+  background: rgba(59, 130, 246, 0.15);
   color: #FFFFFF;
   padding: 5rem 0 2.5rem;
   margin-top: auto;
