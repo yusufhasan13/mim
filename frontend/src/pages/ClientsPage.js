@@ -92,7 +92,7 @@ const ClientsPage = () => {
           >
             <h2 className="section-title">Industries We Serve</h2>
             <div className="industries-grid">
-              {['Banking & Finance', 'Automotive', 'Retail & Consumer', 'Media & Entertainment', 'Real Estate & Hospitality', 'Pharma & Healthcare'].map((industry, index) => (
+              {['Banking & Finance', 'Automotive', 'Retail & Consumer', 'Media & Entertainment', 'Real Estate & Hospitality', 'Pharma & Healthcare', 'Education & Training', 'Food & Beverage'].map((industry, index) => (
                 <motion.div
                   key={index}
                   initial={{ opacity: 0, y: 20 }}
