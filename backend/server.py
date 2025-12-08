@@ -108,7 +108,7 @@ class MiMProfileScraper:
             {
                 "title": "SMS Solutions",
                 "description": "30+ Billion SMS per annum with cutting-edge features and global reach",
-                "icon": "https://customer-assets.emergentagent.com/job_mim-evolution/artifacts/07eymxya_IMG_2902%202.jpg",
+                "icon": "https://img.icons8.com/3d-fluency/400/sms-messenger.png",
                 "features": [
                     "Bulk SMS API Integration",
                     "Rich Media SMS (Images, PDFs, Videos)",
