@@ -29,14 +29,22 @@ const BookMeetingPopup = ({ isOpen, onClose }) => {
     setSubmitting(true);
 
     try {
+      // Combine country code with phone
+      const fullPhone = `${formData.countryCode} ${formData.phone}`;
+      
       // Send to backend API
-      await apiService.bookMeeting(formData);
+      await apiService.bookMeeting({
+        ...formData,
+        phone: fullPhone
+      });
+      
       toast.success('Meeting request sent! Our team will contact you soon.');
       
       // Reset form
       setFormData({
         name: '',
         email: '',
+        countryCode: '+91',
         phone: '',
         company: '',
         preferredDate: '',
