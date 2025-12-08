@@ -5,6 +5,7 @@ import CountUp from 'react-countup';
 import Tilt from 'react-parallax-tilt';
 import { ArrowRight, Globe, Users, Building2, TrendingUp, MessageCircle, Mail, Send, Sparkles } from 'lucide-react';
 import { apiService } from '../utils/api';
+import BookMeetingPopup from '../components/BookMeetingPopup';
 
 const HomePage = () => {
   const [services, setServices] = useState([]);
