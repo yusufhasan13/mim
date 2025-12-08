@@ -8,6 +8,7 @@ const BookMeetingPopup = ({ isOpen, onClose }) => {
   const [formData, setFormData] = useState({
     name: '',
     email: '',
+    countryCode: '+91',
     phone: '',
     company: '',
     preferredDate: '',
