@@ -74,15 +74,29 @@ const Navigation = () => {
       {isOpen && (
         <div className="nav-links-mobile" data-testid="mobile-menu">
           {navLinks.map((link) => (
-            <Link
-              key={link.path}
-              to={link.path}
-              className={`nav-link-mobile ${isActive(link.path) ? 'active' : ''}`}
-              onClick={() => setIsOpen(false)}
-              data-testid={`mobile-nav-link-${link.label.toLowerCase().replace(' ', '-')}`}
-            >
-              {link.label}
-            </Link>
+            link.external ? (
+              <a
+                key={link.path}
+                href={link.path}
+                target="_blank"
+                rel="noopener noreferrer"
+                className={`nav-link-mobile`}
+                onClick={() => setIsOpen(false)}
+                data-testid={`mobile-nav-link-${link.label.toLowerCase().replace(/[^a-z]/g, '-')}`}
+              >
+                {link.label}
+              </a>
+            ) : (
+              <Link
+                key={link.path}
+                to={link.path}
+                className={`nav-link-mobile ${isActive(link.path) ? 'active' : ''}`}
+                onClick={() => setIsOpen(false)}
+                data-testid={`mobile-nav-link-${link.label.toLowerCase().replace(/[^a-z]/g, '-')}`}
+              >
+                {link.label}
+              </Link>
+            )
           ))}
         </div>
       )}
