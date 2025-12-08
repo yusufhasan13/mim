@@ -470,7 +470,7 @@ body::after {
   background: #FFFFFF;
 }
 
-/* Custom Background Image - 60% Visible */
+/* Custom Background Image - 75% Visible */
 .hero-section::before {
   content: '';
   position: absolute;
@@ -478,16 +478,16 @@ body::after {
   left: 0;
   width: 100%;
   height: 100%;
-  background-image: url('https://customer-assets.emergentagent.com/job_mim-evolution/artifacts/x96k4u5p_IMG_3095.JPG');
+  background-image: url('https://customer-assets.emergentagent.com/job_mim-evolution/artifacts/rhwmizv0_IMG_3096.jpg');
   background-size: cover;
   background-position: center center;
   background-repeat: no-repeat;
   background-attachment: scroll;
-  opacity: 0.6;
+  opacity: 0.75;
   z-index: 0;
 }
 
-/* White overlay for 60% visibility (40% white overlay) */
+/* White overlay for 75% visibility (25% white overlay) */
 .hero-section::after {
   content: '';
   position: absolute;
@@ -495,7 +495,7 @@ body::after {
   left: 0;
   width: 100%;
   height: 100%;
-  background: rgba(255, 255, 255, 0.4);
+  background: rgba(255, 255, 255, 0.25);
   z-index: 1;
 }
 
