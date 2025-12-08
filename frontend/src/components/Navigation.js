@@ -12,7 +12,7 @@ const Navigation = () => {
     { path: '/services', label: 'Services' },
     { path: '/clients', label: 'Clients' },
     { path: '/case-studies', label: 'Case Studies' },
-    { path: '/blog', label: 'Blog' },
+    // { path: '/blog', label: 'Blog' }, // Hidden - can be enabled from admin panel
     { path: '/testimonials', label: 'Testimonials' },
     { path: '/careers', label: 'Careers' },
     { path: '/contact', label: 'Contact' },
