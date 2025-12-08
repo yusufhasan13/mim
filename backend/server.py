@@ -370,9 +370,14 @@ class MiMProfileScraper:
             "/client-logos/unnamed.png",
             "/client-logos/vestige.png",
         ]
-
-# Total: 107 logos
-Exit code: 0</function_results>
+        
+        clients = []
+        for logo_url in client_logos:
+            filename = logo_url.split('/')[-1]
+            name = filename.rsplit('.', 1)[0].replace('_', ' ').replace('-', ' ').title()
+            clients.append({"name": name, "logo_url": logo_url})
+        
+        return clients</function_results>
 <system_warning>Token usage: 375791/1000000; 624209 remaining</system_warning>
 
 Now let me update the server.py with the new client logos list:
