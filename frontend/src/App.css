@@ -1565,20 +1565,20 @@ body::after {
   display: inline-block;
   padding: 2rem;
   
-  /* 3D Glass Card with Fading Edges */
+  /* Shiny White 3D Glass Card - 20% transparent (80% opacity) */
   background: linear-gradient(
     135deg,
-    rgba(255, 255, 255, 0.15) 0%,
-    rgba(255, 255, 255, 0.08) 50%,
-    rgba(255, 255, 255, 0.15) 100%
+    rgba(255, 255, 255, 0.85) 0%,
+    rgba(255, 255, 255, 0.75) 50%,
+    rgba(255, 255, 255, 0.85) 100%
   );
-  backdrop-filter: blur(24px) saturate(180%);
+  backdrop-filter: blur(28px) saturate(200%);
   border-radius: 32px;
-  border: 1px solid rgba(255, 255, 255, 0.2);
+  border: 1px solid rgba(255, 255, 255, 0.3);
   box-shadow: 
     0 20px 60px rgba(0, 0, 0, 0.3),
-    0 0 80px rgba(255, 255, 255, 0.05),
-    inset 0 2px 4px rgba(255, 255, 255, 0.15),
+    0 0 80px rgba(255, 255, 255, 0.1),
+    inset 0 2px 4px rgba(255, 255, 255, 0.4),
     inset 0 -2px 4px rgba(0, 0, 0, 0.1);
 }
 
@@ -1593,7 +1593,7 @@ body::after {
   border-radius: 32px;
   background: radial-gradient(
     ellipse at top,
-    rgba(255, 255, 255, 0.15) 0%,
+    rgba(255, 255, 255, 0.2) 0%,
     transparent 60%
   );
   pointer-events: none;
@@ -1609,7 +1609,7 @@ body::after {
   border-radius: 32px;
   background: radial-gradient(
     ellipse at bottom,
-    rgba(0, 0, 0, 0.2) 0%,
+    rgba(0, 0, 0, 0.15) 0%,
     transparent 60%
   );
   pointer-events: none;
@@ -1621,7 +1621,8 @@ body::after {
   object-fit: contain;
   position: relative;
   z-index: 1;
-  filter: drop-shadow(0 4px 12px rgba(0, 0, 0, 0.3));
+  mix-blend-mode: multiply;
+  filter: contrast(1.1) drop-shadow(0 4px 12px rgba(0, 0, 0, 0.2));
 }
 
 @media (max-width: 768px) {
