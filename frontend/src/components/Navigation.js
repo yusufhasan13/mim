@@ -35,14 +35,27 @@ const Navigation = () => {
         {/* Desktop Menu */}
         <div className="nav-links-desktop">
           {navLinks.map((link) => (
-            <Link
-              key={link.path}
-              to={link.path}
-              className={`nav-link ${isActive(link.path) ? 'active' : ''}`}
-              data-testid={`nav-link-${link.label.toLowerCase().replace(' ', '-')}`}
-            >
-              {link.label}
-            </Link>
+            link.external ? (
+              <a
+                key={link.path}
+                href={link.path}
+                target="_blank"
+                rel="noopener noreferrer"
+                className={`nav-link`}
+                data-testid={`nav-link-${link.label.toLowerCase().replace(/[^a-z]/g, '-')}`}
+              >
+                {link.label}
+              </a>
+            ) : (
+              <Link
+                key={link.path}
+                to={link.path}
+                className={`nav-link ${isActive(link.path) ? 'active' : ''}`}
+                data-testid={`nav-link-${link.label.toLowerCase().replace(/[^a-z]/g, '-')}`}
+              >
+                {link.label}
+              </Link>
+            )
           ))}
         </div>
 
