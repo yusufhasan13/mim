@@ -42,7 +42,7 @@ const Footer = () => {
               <li><Link to="/about" data-testid="footer-link-about">About Us</Link></li>
               <li><Link to="/services" data-testid="footer-link-services">Services</Link></li>
               <li><Link to="/case-studies" data-testid="footer-link-case-studies">Case Studies</Link></li>
-              <li><Link to="/blog" data-testid="footer-link-blog">Blog</Link></li>
+              {/* <li><Link to="/blog" data-testid="footer-link-blog">Blog</Link></li> */}
               <li><Link to="/contact" data-testid="footer-link-contact">Contact</Link></li>
             </ul>
           </div>
