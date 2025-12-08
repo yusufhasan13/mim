@@ -3440,18 +3440,18 @@ body::after {
   font-weight: 700;
   color: var(--navy-primary);
   letter-spacing: -0.01em;
-  font-size: clamp(1.05rem, 2.4vw, 1.2rem);
+  font-size: clamp(0.79rem, 1.8vw, 0.9rem);
 }
 
 .ribbon-flags {
   display: flex;
-  gap: clamp(0.9rem, 2.4vw, 1.8rem);
+  gap: clamp(0.68rem, 1.8vw, 1.35rem);
   flex-wrap: wrap;
   align-items: center;
 }
 
 .ribbon-flags span {
-  font-size: clamp(0.96rem, 2.4vw, 1.08rem);
+  font-size: clamp(0.72rem, 1.8vw, 0.81rem);
   color: var(--glass-text-muted);
   font-weight: 700;
   display: inline-flex;
@@ -3459,10 +3459,10 @@ body::after {
   gap: 0.4rem;
 }
 
-/* Make flags wave - apply animation to emoji */
+/* Make flags wave - apply animation to emoji (10% smaller than original) */
 .ribbon-flags span::before {
   content: attr(data-flag);
-  font-size: clamp(1.44rem, 3.6vw, 1.62rem);
+  font-size: clamp(1.08rem, 2.7vw, 1.22rem);
   display: inline-block;
   animation: wave 2s ease-in-out infinite;
   transform-origin: bottom center;
