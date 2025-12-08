@@ -30,6 +30,15 @@ export const apiService = {
   // Contact
   submitContact: (data) => api.post('/api/contact', data),
   
+  // Book Meeting
+  bookMeeting: (data) => api.post('/api/book-meeting', {
+    name: data.name,
+    email: data.email,
+    phone: data.phone,
+    service: data.company || '',
+    message: `${data.preferredDate || ''}|${data.preferredTime || ''}|${data.message || ''}`
+  }),
+  
   // Blog
   getBlogPosts: (params) => api.get('/api/blog', { params }),
   getBlogPost: (slug) => api.get(`/api/blog/${slug}`),
