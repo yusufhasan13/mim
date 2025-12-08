@@ -221,6 +221,12 @@ const HomePage = () => {
           </motion.div>
         </div>
       </section>
+      
+      {/* Book Meeting Popup */}
+      <BookMeetingPopup 
+        isOpen={showMeetingPopup} 
+        onClose={() => setShowMeetingPopup(false)} 
+      />
     </div>
   );
 };
