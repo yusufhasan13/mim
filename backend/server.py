@@ -225,9 +225,9 @@ class MiMProfileScraper:
                 ]
             },
             {
-                "title": "Outdoor/Interactive LED",
+                "title": "Outdoor & Indoor LED",
                 "description": "High-impact digital signage solutions with LED screens and interactive displays for maximum visibility",
-                "icon": "https://img.icons8.com/3d-fluency/200/tv.png",
+                "icon": "https://customer-assets.emergentagent.com/job_mim-evolution/artifacts/b4p0xrxe_image.png",
                 "features": [
                     "Large Format LED Displays & Video Walls",
                     "Interactive Touch Screen Signage",
