@@ -85,7 +85,7 @@ const BookMeetingPopup = ({ isOpen, onClose }) => {
             onClick={(e) => e.stopPropagation()}
           >
             {/* Close button */}
-            <button className="popup-close-btn" onClick={onClose}>
+            <button className="popup-close-btn" onClick={onClose} type="button">
               <X size={24} />
             </button>
 
