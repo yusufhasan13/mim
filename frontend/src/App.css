@@ -610,11 +610,9 @@ body::after {
 
 .ribbon-text {
   font-weight: 700;
-  color: #FFFFFF;
+  color: var(--navy-primary);
   letter-spacing: -0.01em;
   font-size: clamp(0.875rem, 2vw, 1rem);
-  text-shadow: 0 0 20px rgba(255, 255, 255, 0.5);
-  filter: brightness(1.15);
 }
 
 .ribbon-flags {
@@ -625,10 +623,8 @@ body::after {
 
 .ribbon-flags span {
   font-size: clamp(0.8rem, 2vw, 0.9rem);
-  color: #FFFFFF;
+  color: var(--glass-text-muted);
   font-weight: 700;
-  text-shadow: 0 0 15px rgba(255, 255, 255, 0.4);
-  filter: brightness(1.12);
 }
 
 /* Stats Section */
