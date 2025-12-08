@@ -80,7 +80,7 @@ const HomePage = () => {
                 data-testid="hero-cta-contact"
               >
                 <Send size={20} className="btn-icon" />
-                Let's Talk
+                Let's Meet
               </button>
             </div>
             <div className="hero-badges">
