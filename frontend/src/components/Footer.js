@@ -38,7 +38,7 @@ const Footer = () => {
               <li><Link to="/services" data-testid="footer-service-api">API Integration</Link></li>
               <li><Link to="/services" data-testid="footer-service-gamification">Gamification</Link></li>
               <li><Link to="/services" data-testid="footer-service-qr">QR & Loyalty Programs</Link></li>
-              <li><Link to="/services" data-testid="footer-service-led">Outdoor/Interactive LED</Link></li>
+              <li><Link to="/services" data-testid="footer-service-led">Outdoor & Indoor LED</Link></li>
               <li><Link to="/services" data-testid="footer-service-software">Software Solutions</Link></li>
             </ul>
           </div>
