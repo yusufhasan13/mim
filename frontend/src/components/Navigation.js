@@ -15,7 +15,8 @@ const Navigation = () => {
     // { path: '/blog', label: 'Blog' }, // Hidden - can be enabled from admin panel
     // { path: '/testimonials', label: 'Testimonials' }, // Hidden - can be enabled from admin panel
     { path: '/careers', label: 'Careers' },
-    { path: '/contact', label: 'Contact' },
+    { path: 'https://linkext.io/Login.aspx', label: 'Login', external: true },
+    { path: '/contact', label: "Let's Talk" },
   ];
 
   const isActive = (path) => location.pathname === path;
