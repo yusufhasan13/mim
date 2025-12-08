@@ -1561,17 +1561,20 @@ body::after {
   font-weight: 600;
 }
 
-/* ============= FOOTER ============= */
+/* ============= FOOTER WITH NEW BACKGROUND ============= */
 .footer {
-  background: rgba(59, 130, 246, 0.15);
+  background: #1E3A8A;
   color: #FFFFFF;
-  padding: 5rem 0 2.5rem;
+  padding: 0;
   margin-top: auto;
   position: relative;
   overflow: hidden;
+  min-height: 600px;
+  display: flex;
+  align-items: flex-end;
 }
 
-/* Custom Background Image for Footer - Responsive */
+/* New Background Image - Full Coverage */
 .footer::before {
   content: '';
   position: absolute;
@@ -1579,40 +1582,38 @@ body::after {
   left: 0;
   width: 100%;
   height: 100%;
-  background-image: url('https://customer-assets.emergentagent.com/job_mim-evolution/artifacts/39aafnna_IMG_3093.JPG');
+  background-image: url('https://customer-assets.emergentagent.com/job_mim-evolution/artifacts/v8azvgm2_IMG_3101.jpg');
   background-size: cover;
-  background-position: center center;
+  background-position: center top;
   background-repeat: no-repeat;
   background-attachment: scroll;
-  opacity: 0.6;
   z-index: 0;
 }
 
-/* Mobile optimization */
+/* Remove overlay - show image directly */
+.footer::after {
+  display: none;
+}
+
+/* Responsive background */
 @media (max-width: 768px) {
+  .footer {
+    min-height: 500px;
+  }
+  
   .footer::before {
     background-size: cover;
-    background-position: center;
+    background-position: center top;
   }
 }
 
-/* Tablet optimization */
 @media (min-width: 769px) and (max-width: 1200px) {
   .footer::before {
     background-size: cover;
-    background-position: center;
+    background-position: center top;
   }
 }
 
-/* Large desktop optimization */
-@media (min-width: 1920px) {
-  .footer::before {
-    background-size: cover;
-    background-position: center;
-  }
-}
-
-/* 4K and ultra-wide */
 @media (min-width: 2560px) {
   .footer::before {
     background-size: 100% auto;
@@ -1620,25 +1621,13 @@ body::after {
   }
 }
 
-/* Glassmorphism Overlay - Blue Transparent */
-.footer::after {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: linear-gradient(135deg, rgba(59, 130, 246, 0.3), rgba(30, 58, 138, 0.4));
-  backdrop-filter: blur(8px);
-  z-index: 1;
-}
-
 .footer-container {
   max-width: 1400px;
   margin: 0 auto;
-  padding: 0 2rem;
+  padding: 3rem 2rem 2.5rem;
   position: relative;
   z-index: 10;
+  width: 100%;
 }
 
 .footer-logo-container {
