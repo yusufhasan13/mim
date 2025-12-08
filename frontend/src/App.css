@@ -1561,78 +1561,25 @@ body::after {
   font-weight: 600;
 }
 
-/* ============= FOOTER WITH NEW BACKGROUND ============= */
+/* ============= FOOTER WITH SOLID COLOR ============= */
 .footer {
-  background: #1E3A8A;
+  background: #1a2942;
   color: #FFFFFF;
-  padding: 0;
+  padding: clamp(3rem, 6vh, 5rem) 0 clamp(2rem, 4vh, 2.5rem);
   margin-top: auto;
   position: relative;
   overflow: hidden;
-  min-height: 800px;
-  display: flex;
-  align-items: flex-end;
 }
 
-/* New Background Image - Full Coverage */
+/* Remove background image */
 .footer::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-image: url('https://customer-assets.emergentagent.com/job_mim-evolution/artifacts/v8azvgm2_IMG_3101.jpg');
-  background-size: cover;
-  background-position: center top;
-  background-repeat: no-repeat;
-  background-attachment: scroll;
-  z-index: 0;
-}
-
-/* Remove overlay - show image directly */
-.footer::after {
   display: none;
-}
-
-/* Responsive background */
-@media (max-width: 768px) {
-  .footer {
-    min-height: 700px;
-  }
-  
-  .footer::before {
-    background-size: cover;
-    background-position: center top;
-  }
-}
-
-@media (min-width: 769px) and (max-width: 1200px) {
-  .footer {
-    min-height: 750px;
-  }
-  
-  .footer::before {
-    background-size: cover;
-    background-position: center top;
-  }
-}
-
-@media (min-width: 2560px) {
-  .footer {
-    min-height: 900px;
-  }
-  
-  .footer::before {
-    background-size: 100% auto;
-    background-position: center top;
-  }
 }
 
 .footer-container {
   max-width: 1400px;
   margin: 0 auto;
-  padding: 0 clamp(1.5rem, 3vw, 2rem) clamp(2rem, 4vh, 2.5rem);
+  padding: 0 clamp(1.5rem, 3vw, 2rem);
   position: relative;
   z-index: 10;
   width: 100%;
