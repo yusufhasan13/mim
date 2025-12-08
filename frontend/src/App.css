@@ -579,20 +579,16 @@ body::after {
 }
 
 .badge {
-  background: rgba(255, 255, 255, 0.15);
-  backdrop-filter: blur(20px);
+  background: rgba(30, 42, 68, 0.08);
+  backdrop-filter: blur(12px);
   padding: clamp(0.625rem, 2vw, 0.75rem) clamp(1rem, 3vw, 1.5rem);
   border-radius: 100px;
   font-size: clamp(0.8rem, 2vw, 0.875rem);
-  border: 1px solid rgba(255, 255, 255, 0.3);
+  border: 1px solid rgba(30, 42, 68, 0.15);
   font-weight: 700;
-  color: #FFFFFF;
+  color: var(--navy-primary);
   letter-spacing: -0.01em;
-  box-shadow: 
-    0 4px 20px rgba(0, 0, 0, 0.25),
-    inset 0 1px 2px rgba(255, 255, 255, 0.2);
-  text-shadow: 0 0 20px rgba(255, 255, 255, 0.5);
-  filter: brightness(1.15);
+  box-shadow: 0 4px 12px rgba(30, 42, 68, 0.08);
 }
 
 .global-ribbon {
