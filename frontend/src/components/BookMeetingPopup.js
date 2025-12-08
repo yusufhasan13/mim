@@ -93,7 +93,7 @@ const BookMeetingPopup = ({ isOpen, onClose }) => {
             <div className="popup-header">
               <Calendar size={48} className="popup-icon" />
               <h2>Book a Google Meet with Our Team</h2>
-              <p>Let's discuss how we can help transform your business</p>
+              <p>Let&apos;s discuss how we can help transform your business</p>
             </div>
 
             {/* Form */}
