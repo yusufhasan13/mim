@@ -1553,7 +1553,7 @@ body::after {
   overflow: hidden;
 }
 
-/* Custom Background Image for Footer */
+/* Custom Background Image for Footer - Responsive */
 .footer::before {
   content: '';
   position: absolute;
@@ -1563,10 +1563,43 @@ body::after {
   height: 100%;
   background-image: url('https://customer-assets.emergentagent.com/job_mim-evolution/artifacts/39aafnna_IMG_3093.JPG');
   background-size: cover;
-  background-position: center;
+  background-position: center center;
   background-repeat: no-repeat;
+  background-attachment: scroll;
   opacity: 0.6;
   z-index: 0;
+}
+
+/* Mobile optimization */
+@media (max-width: 768px) {
+  .footer::before {
+    background-size: cover;
+    background-position: center;
+  }
+}
+
+/* Tablet optimization */
+@media (min-width: 769px) and (max-width: 1200px) {
+  .footer::before {
+    background-size: cover;
+    background-position: center;
+  }
+}
+
+/* Large desktop optimization */
+@media (min-width: 1920px) {
+  .footer::before {
+    background-size: cover;
+    background-position: center;
+  }
+}
+
+/* 4K and ultra-wide */
+@media (min-width: 2560px) {
+  .footer::before {
+    background-size: 100% auto;
+    background-position: center top;
+  }
 }
 
 /* Glassmorphism Overlay - More Transparent */
