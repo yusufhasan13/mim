@@ -1569,7 +1569,7 @@ body::after {
   margin-top: auto;
   position: relative;
   overflow: hidden;
-  min-height: 600px;
+  min-height: 800px;
   display: flex;
   align-items: flex-end;
 }
@@ -1598,7 +1598,7 @@ body::after {
 /* Responsive background */
 @media (max-width: 768px) {
   .footer {
-    min-height: 500px;
+    min-height: 700px;
   }
   
   .footer::before {
@@ -1608,6 +1608,10 @@ body::after {
 }
 
 @media (min-width: 769px) and (max-width: 1200px) {
+  .footer {
+    min-height: 750px;
+  }
+  
   .footer::before {
     background-size: cover;
     background-position: center top;
@@ -1615,6 +1619,10 @@ body::after {
 }
 
 @media (min-width: 2560px) {
+  .footer {
+    min-height: 900px;
+  }
+  
   .footer::before {
     background-size: 100% auto;
     background-position: center top;
@@ -1624,7 +1632,7 @@ body::after {
 .footer-container {
   max-width: 1400px;
   margin: 0 auto;
-  padding: 3rem 2rem 2.5rem;
+  padding: 0 clamp(1.5rem, 3vw, 2rem) clamp(2rem, 4vh, 2.5rem);
   position: relative;
   z-index: 10;
   width: 100%;
