@@ -9,6 +9,7 @@ import { apiService } from '../utils/api';
 const HomePage = () => {
   const [services, setServices] = useState([]);
   const [loading, setLoading] = useState(true);
+  const [expandedMobile, setExpandedMobile] = useState(null);
 
   useEffect(() => {
     fetchServices();
@@ -22,6 +23,20 @@ const HomePage = () => {
       console.error('Error fetching services:', error);
     } finally {
       setLoading(false);
+    }
+  };
+
+  const handleMobileCardClick = (e, index) => {
+    // Check if screen is mobile
+    if (window.innerWidth <= 768) {
+      if (expandedMobile === index) {
+        // Second click - allow navigation
+        return;
+      } else {
+        // First click - expand card, prevent navigation
+        e.preventDefault();
+        setExpandedMobile(index);
+      }
     }
   };
 
