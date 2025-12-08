@@ -74,10 +74,14 @@ const HomePage = () => {
                 <Sparkles size={20} className="btn-icon" />
                 Explore Our Services
               </Link>
-              <Link to="/contact" className="btn btn-secondary" data-testid="hero-cta-contact">
+              <button 
+                onClick={() => setShowMeetingPopup(true)} 
+                className="btn btn-secondary" 
+                data-testid="hero-cta-contact"
+              >
                 <Send size={20} className="btn-icon" />
                 Let's Talk
-              </Link>
+              </button>
             </div>
             <div className="hero-badges">
               <span className="badge">100% Bootstrapped</span>
