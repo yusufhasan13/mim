@@ -176,22 +176,40 @@ body::after {
   display: flex;
   align-items: center;
   text-decoration: none;
-  color: var(--glass-text);
+  color: var(--white);
   transition: opacity 0.3s;
+  padding: 0.5rem 1rem;
+  
+  /* Shiny White Glass Card - 20% transparent (80% opacity) */
+  background: rgba(255, 255, 255, 0.8);
+  backdrop-filter: blur(20px) saturate(180%);
+  border-radius: 16px;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  box-shadow: 
+    0 4px 16px rgba(30, 42, 68, 0.15),
+    inset 0 1px 2px rgba(255, 255, 255, 0.5);
 }
 
 .nav-logo:hover {
-  opacity: 0.85;
+  opacity: 0.9;
+  box-shadow: 
+    0 6px 24px rgba(30, 42, 68, 0.2),
+    inset 0 1px 2px rgba(255, 255, 255, 0.6);
 }
 
 .nav-logo-img {
   height: 62px;
   width: auto;
   object-fit: contain;
-  /* No filter - keep original logo colors */
+  mix-blend-mode: multiply;
+  filter: contrast(1.1);
 }
 
 @media (max-width: 768px) {
+  .nav-logo {
+    padding: 0.375rem 0.75rem;
+  }
+  
   .nav-logo-img {
     height: 50px;
   }
