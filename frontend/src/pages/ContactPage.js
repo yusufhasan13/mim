@@ -53,7 +53,7 @@ const ContactPage = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
           >
-            <h1 className="page-title" data-testid="contact-title">Get in Touch</h1>
+            <h1 className="page-title" data-testid="contact-title">Let's Talk</h1>
             <p className="page-subtitle">
               Let's discuss how we can transform your business with our solutions
             </p>
