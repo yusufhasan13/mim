@@ -469,6 +469,52 @@ async def get_external_clients():
 
 # ============= CONTACT FORM =============
 
+@api_router.post("/book-meeting")
+async def book_meeting(meeting_data: ContactMessage):
+    """Book a Google Meet - sends to multiple recipients"""
+    try:
+        # Prepare meeting request document
+        meeting_doc = {
+            "name": meeting_data.name,
+            "email": meeting_data.email,
+            "phone": meeting_data.phone,
+            "company": meeting_data.service,  # Reusing service field for company
+            "preferred_date": meeting_data.message.split('|')[0] if '|' in meeting_data.message else '',
+            "preferred_time": meeting_data.message.split('|')[1] if '|' in meeting_data.message else '',
+            "message": meeting_data.message,
+            "submitted_at": datetime.utcnow(),
+            "status": "new",
+            "type": "google_meet_booking",
+            "recipients": [
+                "sales@myinboxmedia.com",
+                "pallavi@myinboxmedia.com",
+                "yusuf.atiq@gmail.com"
+            ]
+        }
+        
+        # Insert into MongoDB
+        result = await db.meeting_requests.insert_one(meeting_doc)
+        meeting_id = str(result.inserted_id)
+        
+        logger.info(f"Meeting booking request: {meeting_id} - Will notify: sales@myinboxmedia.com, pallavi@myinboxmedia.com, yusuf.atiq@gmail.com")
+        
+        # TODO: Send email notifications to all recipients
+        # For now, storing in database
+        
+        return {
+            "success": True,
+            "message": "Meeting request received! Our team will contact you within 24 hours.",
+            "meeting_id": meeting_id
+        }
+        
+    except Exception as e:
+        logger.error(f"Error booking meeting: {str(e)}")
+        raise HTTPException(
+            status_code=status.HTTP_500_INTERNAL_SERVER_ERROR,
+            detail=f"Failed to book meeting: {str(e)}"
+        )
+
+
 @api_router.post("/contact")
 async def submit_contact_form(contact_data: ContactMessage):
     """Submit contact form"""
