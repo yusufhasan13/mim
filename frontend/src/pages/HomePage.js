@@ -160,8 +160,15 @@ const HomePage = () => {
                   transition={{ delay: index * 0.05 }}
                   viewport={{ once: true }}
                 >
-                  <Link to="/services" className="service-card-expandable-link">
-                    <div className="service-card-expandable" data-testid={`service-card-${index}`}>
+                  <Link 
+                    to="/services" 
+                    className="service-card-expandable-link"
+                    onClick={(e) => handleMobileCardClick(e, index)}
+                  >
+                    <div 
+                      className={`service-card-expandable ${expandedMobile === index ? 'mobile-expanded' : ''}`}
+                      data-testid={`service-card-${index}`}
+                    >
                       <div className="service-card-header">
                         <div className="service-icon-large">
                           <img src={service.icon} alt={service.title} />
@@ -176,6 +183,10 @@ const HomePage = () => {
                             <li key={idx}>{feature}</li>
                           ))}
                         </ul>
+                        <div className="service-explore-btn">
+                          <span className="explore-arrow">→</span>
+                          <span>Click to Explore All Services</span>
+                        </div>
                       </div>
                     </div>
                   </Link>
