@@ -1101,7 +1101,11 @@ async def get_all_contacts(
         skip = (page - 1) * limit
         
         total = await db.contacts.count_documents(query)
-        cursor = db.contacts.find(query).sort("submitted_at", -1).skip(skip).limit(limit)
+        cursor = db.contacts.find(
+            query,
+            {"_id": 1, "name": 1, "email": 1, "phone": 1, "service": 1, 
+             "message": 1, "submitted_at": 1, "status": 1, "email_sent": 1}
+        ).sort("submitted_at", -1).skip(skip).limit(limit)
         contacts = await cursor.to_list(length=limit)
         
         return {
