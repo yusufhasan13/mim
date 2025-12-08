@@ -3484,3 +3484,122 @@ body::after {
     justify-content: center;
   }
 }
+
+/* ============= BOOK MEETING POPUP ============= */
+.popup-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.6);
+  backdrop-filter: blur(8px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+  padding: 1rem;
+}
+
+.popup-glass-card {
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(30px) saturate(180%);
+  border: 1px solid rgba(30, 42, 68, 0.1);
+  border-radius: 32px;
+  padding: clamp(2rem, 5vw, 3rem);
+  max-width: min(650px, 95vw);
+  width: 100%;
+  max-height: 90vh;
+  overflow-y: auto;
+  box-shadow: 
+    0 30px 90px rgba(30, 42, 68, 0.25),
+    inset 0 1px 2px rgba(255, 255, 255, 0.8);
+  position: relative;
+}
+
+.popup-close-btn {
+  position: absolute;
+  top: 1.5rem;
+  right: 1.5rem;
+  background: rgba(30, 42, 68, 0.08);
+  border: 1px solid rgba(30, 42, 68, 0.15);
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.3s;
+  color: var(--navy-primary);
+}
+
+.popup-close-btn:hover {
+  background: rgba(206, 22, 47, 0.1);
+  border-color: var(--orange-primary);
+  color: var(--orange-primary);
+  transform: rotate(90deg);
+}
+
+.popup-header {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.popup-icon {
+  color: var(--orange-primary);
+  margin-bottom: 1rem;
+  filter: drop-shadow(0 4px 12px rgba(206, 22, 47, 0.3));
+}
+
+.popup-header h2 {
+  font-family: var(--font-heading);
+  font-size: clamp(1.5rem, 4vw, 2rem);
+  font-weight: 800;
+  color: var(--navy-primary);
+  margin-bottom: 0.75rem;
+  letter-spacing: -0.02em;
+}
+
+.popup-header p {
+  color: var(--glass-text-muted);
+  font-size: clamp(0.95rem, 2vw, 1.05rem);
+}
+
+.popup-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.popup-form .form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.25rem;
+}
+
+@media (max-width: 640px) {
+  .popup-form .form-row {
+    grid-template-columns: 1fr;
+  }
+}
+
+.popup-form .form-group label {
+  font-weight: 600;
+  color: var(--navy-primary);
+  font-size: 0.95rem;
+}
+
+.popup-form .form-group input,
+.popup-form .form-group select,
+.popup-form .form-group textarea {
+  background: rgba(255, 255, 255, 0.9);
+  border: 2px solid rgba(30, 42, 68, 0.2);
+}
+
+.popup-form .form-group input:focus,
+.popup-form .form-group select:focus,
+.popup-form .form-group textarea:focus {
+  border-color: var(--orange-primary);
+  box-shadow: 0 0 0 4px rgba(206, 22, 47, 0.1);
+}
