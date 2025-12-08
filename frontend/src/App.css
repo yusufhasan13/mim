@@ -1729,15 +1729,19 @@ body::after {
 
 .footer-heading {
   font-size: 1.125rem;
-  font-weight: 700;
+  font-weight: 800;
   margin-bottom: 1.25rem;
   letter-spacing: -0.01em;
+  color: #FFFFFF;
+  text-shadow: 0 0 20px rgba(255, 255, 255, 0.4);
 }
 
 .footer-text {
-  color: var(--glass-text-muted);
+  color: #FFFFFF;
   margin-bottom: 1.25rem;
   line-height: 1.7;
+  font-weight: 600;
+  text-shadow: 0 0 20px rgba(255, 255, 255, 0.3);
 }
 
 .footer-stats {
@@ -1773,9 +1777,11 @@ body::after {
 
 .footer-links a,
 .footer-links li {
-  color: var(--glass-text-muted);
+  color: #FFFFFF;
   text-decoration: none;
   transition: color 0.3s;
+  font-weight: 600;
+  text-shadow: 0 0 15px rgba(255, 255, 255, 0.2);
 }
 
 .footer-links a:hover {
@@ -1800,11 +1806,19 @@ body::after {
 }
 
 .footer-contact a {
-  color: var(--glass-text-muted);
+  color: #FFFFFF;
   text-decoration: none;
   display: block;
   margin: 0.25rem 0;
   transition: color 0.3s;
+  font-weight: 600;
+  text-shadow: 0 0 15px rgba(255, 255, 255, 0.2);
+}
+
+.footer-contact span {
+  color: #FFFFFF;
+  font-weight: 600;
+  text-shadow: 0 0 15px rgba(255, 255, 255, 0.2);
 }
 
 .footer-contact a:hover {
@@ -1816,11 +1830,13 @@ body::after {
   justify-content: space-between;
   align-items: center;
   padding-top: 2.5rem;
-  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  border-top: 1px solid rgba(255, 255, 255, 0.2);
   flex-wrap: wrap;
   gap: 1.5rem;
-  color: var(--glass-text-muted);
+  color: #FFFFFF;
   font-size: 0.95rem;
+  font-weight: 600;
+  text-shadow: 0 0 15px rgba(255, 255, 255, 0.2);
 }
 
 .footer-certifications {
@@ -1830,7 +1846,9 @@ body::after {
 }
 
 .footer-certifications span {
-  color: var(--glass-text-muted);
+  color: #FFFFFF;
+  font-weight: 600;
+  text-shadow: 0 0 15px rgba(255, 255, 255, 0.2);
 }
 
 /* ============= ABOUT PAGE ============= */
