@@ -53,37 +53,30 @@ const ClientsPage = () => {
           {loading ? (
             <div className="loading-spinner" data-testid="clients-loading">Loading clients...</div>
           ) : (
-            <div className="clients-carousel" ref={emblaRef}>
-              <div className="clients-carousel-container">
-                {clientRows.map((row, rowIndex) => (
-                  <div key={rowIndex} className="clients-carousel-slide">
-                    <div className="clients-grid">
-                      {row.map((client, index) => (
-                        <motion.div
-                          key={index}
-                          initial={{ opacity: 0, scale: 0.9 }}
-                          whileInView={{ opacity: 1, scale: 1 }}
-                          transition={{ delay: index * 0.05 }}
-                          viewport={{ once: true }}
-                          whileHover={{ scale: 1.05 }}
-                        >
-                          <div className="client-logo-card" data-testid={`client-${rowIndex}-${index}`}>
-                            <img
-                              src={client.logo_url}
-                              alt={client.name || 'Client logo'}
-                              className="client-logo-img"
-                              loading="lazy"
-                              onError={(e) => {
-                                e.target.style.display = 'none';
-                              }}
-                            />
-                          </div>
-                        </motion.div>
-                      ))}
-                    </div>
+            <div className="clients-grid">
+              {clients.map((client, index) => (
+                <motion.div
+                  key={index}
+                  initial={{ opacity: 0, scale: 0.9 }}
+                  whileInView={{ opacity: 1, scale: 1 }}
+                  transition={{ delay: (index % 18) * 0.05 }}
+                  viewport={{ once: true }}
+                  whileHover={{ scale: 1.05 }}
+                >
+                  <div className="client-logo-card" data-testid={`client-${index}`}>
+                    <img
+                      src={client.logo_url}
+                      alt={client.name || 'Client logo'}
+                      className="client-logo-img"
+                      loading="lazy"
+                      onError={(e) => {
+                        console.log('Failed to load:', client.logo_url);
+                        e.target.style.display = 'none';
+                      }}
+                    />
                   </div>
-                ))}
-              </div>
+                </motion.div>
+              ))}
             </div>
           )}
         </div>
