@@ -6,42 +6,24 @@ const Footer = () => {
   return (
     <footer className="footer" data-testid="footer">
       <div className="footer-container">
+        {/* Main Description - Centered */}
+        <div className="footer-main-content">
+          <p className="footer-main-text">
+            Leading IT & Telecommunication solutions provider serving 25,000+ businesses globally for 16+ years.
+          </p>
+          
+          {/* Stats - Centered */}
+          <div className="footer-stats-centered">
+            <span className="footer-stat-item">16+ Years</span>
+            <span className="footer-stat-divider">|</span>
+            <span className="footer-stat-item">20+ Countries</span>
+            <span className="footer-stat-divider">|</span>
+            <span className="footer-stat-item">25K+ Clients</span>
+          </div>
+        </div>
+
+        {/* Footer Grid - 3 Columns */}
         <div className="footer-grid">
-          {/* Company Info - No Logo, just text */}
-          <div className="footer-section">
-            <p className="footer-text">
-              Leading IT & Telecommunication solutions provider serving 25,000+ businesses globally for 16+ years.
-            </p>
-            <div className="footer-stats">
-              <div className="footer-stat">
-                <span className="stat-value">16+</span>
-                <span className="stat-label">Years</span>
-              </div>
-              <div className="footer-stat">
-                <span className="stat-value">20+</span>
-                <span className="stat-label">Countries</span>
-              </div>
-              <div className="footer-stat">
-                <span className="stat-value">25K+</span>
-                <span className="stat-label">Clients</span>
-              </div>
-            </div>
-          </div>
-
-          {/* Quick Links */}
-          <div className="footer-section">
-            <h4 className="footer-heading">Quick Links</h4>
-            <ul className="footer-links">
-              <li><Link to="/about" data-testid="footer-link-about">About Us</Link></li>
-              <li><Link to="/services" data-testid="footer-link-services">Services</Link></li>
-              {/* <li><Link to="/case-studies" data-testid="footer-link-case-studies">Case Studies</Link></li> */}
-              {/* <li><Link to="/blog" data-testid="footer-link-blog">Blog</Link></li> */}
-              {/* <li><Link to="/testimonials" data-testid="footer-link-testimonials">Testimonials</Link></li> */}
-              <li><Link to="/careers" data-testid="footer-link-careers">Careers</Link></li>
-              <li><Link to="/contact" data-testid="footer-link-contact">Contact</Link></li>
-            </ul>
-          </div>
-
           {/* Services */}
           <div className="footer-section">
             <h4 className="footer-heading">Services</h4>
@@ -58,6 +40,17 @@ const Footer = () => {
               <li><Link to="/services" data-testid="footer-service-qr">QR & Loyalty Programs</Link></li>
               <li><Link to="/services" data-testid="footer-service-led">Outdoor/Interactive LED</Link></li>
               <li><Link to="/services" data-testid="footer-service-software">Software Solutions</Link></li>
+            </ul>
+          </div>
+
+          {/* Quick Links */}
+          <div className="footer-section">
+            <h4 className="footer-heading">Quick Links</h4>
+            <ul className="footer-links">
+              <li><Link to="/about" data-testid="footer-link-about">About Us</Link></li>
+              <li><Link to="/services" data-testid="footer-link-services">Services</Link></li>
+              <li><Link to="/careers" data-testid="footer-link-careers">Careers</Link></li>
+              <li><Link to="/contact" data-testid="footer-link-contact">Contact</Link></li>
             </ul>
           </div>
 
