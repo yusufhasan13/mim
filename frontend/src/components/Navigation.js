@@ -5,6 +5,7 @@ import LoginPopup from './LoginPopup';
 
 const Navigation = () => {
   const [isOpen, setIsOpen] = useState(false);
+  const [showLoginPopup, setShowLoginPopup] = useState(false);
   const location = useLocation();
 
   const navLinks = [
@@ -16,7 +17,7 @@ const Navigation = () => {
     // { path: '/blog', label: 'Blog' }, // Hidden - can be enabled from admin panel
     // { path: '/testimonials', label: 'Testimonials' }, // Hidden - can be enabled from admin panel
     { path: '/careers', label: 'Careers' },
-    { path: 'https://linkext.io/Login.aspx', label: 'Login', external: true },
+    { path: '#login', label: 'Login', isPopup: true },
     { path: '/contact', label: "Let's Talk" },
   ];
 
