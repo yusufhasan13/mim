@@ -28,6 +28,14 @@ const BookMeetingPopup = ({ isOpen, onClose }) => {
     });
   };
 
+  const handleDateSelect = (date) => {
+    setFormData({
+      ...formData,
+      preferredDate: date
+    });
+    setShowCalendar(false);
+  };
+
   const handleSubmit = async (e) => {
     e.preventDefault();
     setSubmitting(true);
