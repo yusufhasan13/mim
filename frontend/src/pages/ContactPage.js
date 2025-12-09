@@ -113,14 +113,33 @@ const ContactPage = () => {
 
                   <div className="form-group">
                     <label htmlFor="phone">Phone Number</label>
-                    <input
-                      type="tel"
-                      id="phone"
-                      name="phone"
-                      value={formData.phone}
-                      onChange={handleChange}
-                      data-testid="contact-phone"
-                    />
+                    <div className="phone-input-group">
+                      <select
+                        name="countryCode"
+                        value={formData.countryCode}
+                        onChange={handleChange}
+                        className="country-code-select"
+                        data-testid="contact-country-code"
+                      >
+                        <option value="+91">🇮🇳 +91</option>
+                        <option value="+971">🇦🇪 +971</option>
+                        <option value="+1">🇺🇸 +1</option>
+                        <option value="+1">🇨🇦 +1</option>
+                        <option value="+966">🇸🇦 +966</option>
+                        <option value="+20">🇪🇬 +20</option>
+                        <option value="+61">🇦🇺 +61</option>
+                        <option value="+974">🇶🇦 +974</option>
+                      </select>
+                      <input
+                        type="tel"
+                        id="phone"
+                        name="phone"
+                        value={formData.phone}
+                        onChange={handleChange}
+                        placeholder="1234567890"
+                        data-testid="contact-phone"
+                      />
+                    </div>
                   </div>
 
                   <div className="form-group">
