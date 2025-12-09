@@ -505,15 +505,79 @@ async def book_meeting(meeting_data: ContactMessage):
 
 @api_router.post("/contact")
 async def submit_contact_form(contact_data: ContactMessage):
-    """Submit contact form"""
+    """Submit contact form - stores in DB and sends email"""
     try:
+        # Prepare contact document
         contact_doc = contact_data.dict()
         result = await db.contacts.insert_one(contact_doc)
         contact_id = str(result.inserted_id)
         
         logger.info(f"Contact form submitted: {contact_id}")
         
-        # TODO: Send email notification
+        # Send email notification using MiM Email API
+        try:
+            email_api_url = os.getenv("EMAIL_API_URL")
+            profile_id = os.getenv("EMAIL_PROFILE_ID")
+            api_key = os.getenv("EMAIL_API_KEY")
+            
+            if email_api_url and profile_id and api_key:
+                # Construct HTML email body
+                html_body = f"""
+                <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto;">
+                    <h2 style="color: #1E2A44; border-bottom: 3px solid #CE162F; padding-bottom: 10px;">
+                        New Contact Form Submission
+                    </h2>
+                    <div style="background: #f9f9f9; padding: 20px; border-radius: 8px; margin-top: 20px;">
+                        <p style="margin: 10px 0;"><strong>Name:</strong> {contact_data.name}</p>
+                        <p style="margin: 10px 0;"><strong>Email:</strong> {contact_data.email}</p>
+                        <p style="margin: 10px 0;"><strong>Phone:</strong> {contact_data.phone or 'Not provided'}</p>
+                        <p style="margin: 10px 0;"><strong>Service Interested In:</strong> {contact_data.service or 'Not specified'}</p>
+                        <p style="margin: 10px 0;"><strong>Message:</strong></p>
+                        <div style="background: white; padding: 15px; border-left: 4px solid #CE162F; margin-top: 10px;">
+                            {contact_data.message}
+                        </div>
+                    </div>
+                    <p style="color: #666; font-size: 12px; margin-top: 20px;">
+                        This email was sent from the My Inbox Media® website contact form.
+                    </p>
+                </div>
+                """
+                
+                email_payload = {
+                    "ProfileId": profile_id,
+                    "APIKey": api_key,
+                    "From": "MyInboxMedia<noreply@mimpro.co>",
+                    "To": "sales@myinboxmedia.com",
+                    "ReplyTo": contact_data.email,
+                    "CC": "anirudh@myinboxmedia.com; sameer@myinboxmedia.com",
+                    "Subject": f"New Contact Form: {contact_data.name}",
+                    "text": "",
+                    "html": html_body,
+                    "attachment": []
+                }
+                
+                # Send email using requests
+                email_response = requests.post(
+                    email_api_url,
+                    json=email_payload,
+                    headers={"Content-Type": "application/json"},
+                    timeout=10
+                )
+                
+                if email_response.status_code == 200:
+                    logger.info(f"Email sent successfully for contact: {contact_id}")
+                    await db.contacts.update_one(
+                        {"_id": result.inserted_id},
+                        {"$set": {"email_sent": True}}
+                    )
+                else:
+                    logger.error(f"Email send failed: {email_response.status_code} - {email_response.text}")
+            else:
+                logger.warning("Email API credentials not configured")
+        
+        except Exception as email_error:
+            logger.error(f"Error sending email: {str(email_error)}")
+            # Continue anyway - contact is saved in DB
         
         return {
             "success": True,
