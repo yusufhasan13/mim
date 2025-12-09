@@ -14,11 +14,12 @@ const BookMeetingPopup = ({ isOpen, onClose }) => {
     countryCode: '+91',
     phone: '',
     company: '',
-    preferredDate: '',
+    preferredDate: null,
     preferredTime: '',
     message: ''
   });
   const [submitting, setSubmitting] = useState(false);
+  const [showCalendar, setShowCalendar] = useState(false);
 
   const handleChange = (e) => {
     setFormData({
