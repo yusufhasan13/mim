@@ -260,19 +260,21 @@ class MiMProfileScraper:
     
     @staticmethod
     @staticmethod
+    @staticmethod
     def extract_clients(html_content: str) -> List[dict]:
-        """Extract client logos - 95 updated logos"""
+        """Extract client logos - 91 unique logos (no duplicates)"""
         client_logos = [
-            "/client-logos/36 Toyota.png",
+            "/client-logos/1ferrari (1).png",
+            "/client-logos/2bmw.jpg",
+            "/client-logos/3apollopharma.jpg",
+            "/client-logos/4Hyundai.jpg",
             "/client-logos/Abeer.png",
-            "/client-logos/Abeer1.jpg",
             "/client-logos/AhmedAlMaghribiPerfumes.webp",
             "/client-logos/AlHaji.png",
             "/client-logos/Alain Class.png",
             "/client-logos/Apco.png",
             "/client-logos/Apex Capital.png",
             "/client-logos/BlueCollection (2).png",
-            "/client-logos/BlueCollection.png",
             "/client-logos/CWC.jpg",
             "/client-logos/CenturyPromise.png",
             "/client-logos/CoursePlay.png",
@@ -297,7 +299,6 @@ class MiMProfileScraper:
             "/client-logos/Honda (1).png",
             "/client-logos/Hooliv.png",
             "/client-logos/Huaxia Real Estate.jpg",
-            "/client-logos/Hyundai.jpg",
             "/client-logos/JaleelCashCarry.png",
             "/client-logos/JanDhan.png",
             "/client-logos/Konark.png",
@@ -317,6 +318,7 @@ class MiMProfileScraper:
             "/client-logos/SharjahDrivingInstitute.jpg",
             "/client-logos/Sky-Packers.png",
             "/client-logos/Suraj.jpg",
+            "/client-logos/Toyota 36.png",
             "/client-logos/Toyota.jpg",
             "/client-logos/Untitled-18.png",
             "/client-logos/VBazar.jpg",
@@ -325,17 +327,12 @@ class MiMProfileScraper:
             "/client-logos/abccargo.jpg",
             "/client-logos/alghurairexchange.png",
             "/client-logos/alliedMotors.png",
-            "/client-logos/apco-logo-primary-standard-blue-for-digital-rgb.png",
             "/client-logos/apollonia.png",
-            "/client-logos/apollopharma.jpg",
-            "/client-logos/bmw.jpg",
             "/client-logos/coal india (1).jpg",
             "/client-logos/cropped-JAS-Vision-Real-Estate-1-Small.png",
             "/client-logos/cropped-favicon-layaly.png",
             "/client-logos/dlf.jpg",
-            "/client-logos/dreamize-logo-final-copy-crop.png",
             "/client-logos/fcry.jpg",
-            "/client-logos/ferrari (1).png",
             "/client-logos/fujairaCharity.jpg",
             "/client-logos/furairatransport.jpg",
             "/client-logos/home credit (1).png",
