@@ -3458,10 +3458,10 @@ body::after {
     transform: rotate(0deg);
   }
   25% {
-    transform: rotate(-5deg);
+    transform: rotate(-8deg);
   }
   75% {
-    transform: rotate(5deg);
+    transform: rotate(8deg);
   }
 }
 
@@ -3497,7 +3497,7 @@ body::after {
   align-items: center;
 }
 
-.ribbon-flags span {
+.flag-item {
   font-size: clamp(0.72rem, 1.8vw, 0.81rem);
   color: var(--glass-text-muted);
   font-weight: 700;
@@ -3506,18 +3506,12 @@ body::after {
   gap: 0.4rem;
 }
 
-/* Make flags wave - apply animation to emoji (10% smaller than original) */
-.ribbon-flags span::before {
-  content: attr(data-flag);
+/* Make flag emoji wave */
+.flag-emoji {
   font-size: clamp(1.08rem, 2.7vw, 1.22rem);
   display: inline-block;
   animation: wave 2s ease-in-out infinite;
   transform-origin: bottom center;
-}
-
-/* Hide the actual flag emoji and use pseudo-element */
-.ribbon-flags span {
-  position: relative;
 }
 
 @media (max-width: 768px) {
