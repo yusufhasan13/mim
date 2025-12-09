@@ -85,7 +85,19 @@ const Navigation = () => {
       {isOpen && (
         <div className="nav-links-mobile" data-testid="mobile-menu">
           {navLinks.map((link) => (
-            link.external ? (
+            link.isPopup ? (
+              <button
+                key={link.path}
+                onClick={() => {
+                  setShowLoginPopup(true);
+                  setIsOpen(false);
+                }}
+                className="nav-link-mobile"
+                data-testid={`mobile-nav-link-${link.label.toLowerCase().replace(/[^a-z]/g, '-')}`}
+              >
+                {link.label}
+              </button>
+            ) : link.external ? (
               <a
                 key={link.path}
                 href={link.path}
@@ -111,6 +123,9 @@ const Navigation = () => {
           ))}
         </div>
       )}
+      
+      {/* Login Popup */}
+      <LoginPopup isOpen={showLoginPopup} onClose={() => setShowLoginPopup(false)} />
     </nav>
   );
 };
