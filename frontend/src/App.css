@@ -3915,6 +3915,14 @@ body::after {
   filter: contrast(1.1);
 }
 
+/* Make 2nd and 3rd logos 10% bigger */
+.login-product-card:nth-child(2) .login-product-logo-img,
+.login-product-card:nth-child(3) .login-product-logo-img {
+  max-width: 110%;
+  max-height: 110%;
+  transform: scale(1.1);
+}
+
 .login-product-name {
   font-family: var(--font-heading);
   font-size: clamp(1.125rem, 2.5vw, 1.375rem);
