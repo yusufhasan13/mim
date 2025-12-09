@@ -2698,9 +2698,21 @@ body::after {
   }
 }
 
-/* Button Icon Animations */
-.btn-icon {
-  transition: transform 0.4s ease;
+/* ============= POPUP OVERLAY ============= */
+.popup-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.6);
+  backdrop-filter: blur(8px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+  padding: 1rem;
+  overflow-y: auto;
 }
 
 .btn:hover .btn-icon {
