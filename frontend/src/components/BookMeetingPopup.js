@@ -189,15 +189,30 @@ const BookMeetingPopup = ({ isOpen, onClose }) => {
               <div className="form-row">
                 <div className="form-group">
                   <label htmlFor="preferredDate">Preferred Date *</label>
-                  <input
-                    type="date"
-                    id="preferredDate"
-                    name="preferredDate"
-                    value={formData.preferredDate}
-                    onChange={handleChange}
-                    required
-                    min={new Date().toISOString().split('T')[0]}
-                  />
+                  <div className="custom-date-picker">
+                    <button
+                      type="button"
+                      className="date-picker-button"
+                      onClick={() => setShowCalendar(!showCalendar)}
+                    >
+                      <CalendarIcon size={18} />
+                      {formData.preferredDate ? format(formData.preferredDate, 'MMM dd, yyyy') : 'Select date'}
+                    </button>
+                    {showCalendar && (
+                      <div className="calendar-dropdown">
+                        <DayPicker
+                          mode="single"
+                          selected={formData.preferredDate}
+                          onSelect={handleDateSelect}
+                          disabled={{ before: new Date() }}
+                          modifiersClassNames={{
+                            selected: 'day-selected',
+                            today: 'day-today'
+                          }}
+                        />
+                      </div>
+                    )}
+                  </div>
                 </div>
 
                 <div className="form-group">
