@@ -1,8 +1,11 @@
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { X, Calendar, Send } from 'lucide-react';
+import { X, Calendar as CalendarIcon, Send } from 'lucide-react';
+import { DayPicker } from 'react-day-picker';
+import 'react-day-picker/dist/style.css';
 import { toast } from 'sonner';
 import { apiService } from '../utils/api';
+import { format } from 'date-fns';
 
 const BookMeetingPopup = ({ isOpen, onClose }) => {
   const [formData, setFormData] = useState({
