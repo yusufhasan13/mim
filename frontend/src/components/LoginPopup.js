@@ -14,7 +14,7 @@ const LoginPopup = ({ isOpen, onClose }) => {
       name: 'Techxure',
       url: 'https://techxure.io',
       logo: 'https://customer-assets.emergentagent.com/job_mim-evolution/artifacts/v5x6opgc_Logo2.png',
-      description: 'Technology Solutions'
+      description: "Omni-Channel That's Built Different"
     },
     {
       name: 'Vocalbox',
