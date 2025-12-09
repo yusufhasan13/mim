@@ -13,13 +13,13 @@ const LoginPopup = ({ isOpen, onClose }) => {
     {
       name: 'Techxure',
       url: 'https://techxure.io',
-      logo: 'https://customer-assets.emergentagent.com/job_mim-evolution/artifacts/rv8gcq76_Logo2.JPG',
+      logo: 'https://customer-assets.emergentagent.com/job_mim-evolution/artifacts/v5x6opgc_Logo2.png',
       description: 'Technology Solutions'
     },
     {
       name: 'Vocalbox',
       url: 'https://vocalbox.in/Login.aspx',
-      logo: 'https://customer-assets.emergentagent.com/job_mim-evolution/artifacts/yqawwuoo_Logo3.JPG',
+      logo: 'https://customer-assets.emergentagent.com/job_mim-evolution/artifacts/f7fl41no_Logo3.JPG',
       description: 'Voice Solutions'
     }
   ];
