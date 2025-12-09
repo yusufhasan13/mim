@@ -37,7 +37,16 @@ const Navigation = () => {
         {/* Desktop Menu */}
         <div className="nav-links-desktop">
           {navLinks.map((link) => (
-            link.external ? (
+            link.isPopup ? (
+              <button
+                key={link.path}
+                onClick={() => setShowLoginPopup(true)}
+                className="nav-link"
+                data-testid={`nav-link-${link.label.toLowerCase().replace(/[^a-z]/g, '-')}`}
+              >
+                {link.label}
+              </button>
+            ) : link.external ? (
               <a
                 key={link.path}
                 href={link.path}
