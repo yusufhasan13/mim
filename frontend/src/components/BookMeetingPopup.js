@@ -61,7 +61,7 @@ const BookMeetingPopup = ({ isOpen, onClose }) => {
         countryCode: '+91',
         phone: '',
         company: '',
-        preferredDate: '',
+        preferredDate: null,
         preferredTime: '',
         message: ''
       });
