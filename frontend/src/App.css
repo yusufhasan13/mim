@@ -3845,6 +3845,7 @@ body::after {
   position: relative;
   overflow: hidden;
   box-sizing: border-box;
+  margin: auto;
 }
 
 .login-popup-header {
