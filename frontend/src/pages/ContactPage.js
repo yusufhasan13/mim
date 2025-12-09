@@ -8,6 +8,7 @@ const ContactPage = () => {
   const [formData, setFormData] = useState({
     name: '',
     email: '',
+    countryCode: '+91',
     phone: '',
     service: '',
     message: ''
@@ -26,11 +27,19 @@ const ContactPage = () => {
     setSubmitting(true);
 
     try {
-      await apiService.submitContact(formData);
+      // Combine country code with phone
+      const fullPhone = formData.phone ? `${formData.countryCode} ${formData.phone}` : '';
+      
+      await apiService.submitContact({
+        ...formData,
+        phone: fullPhone
+      });
+      
       toast.success('Thank you for contacting us! We will get back to you soon.');
       setFormData({
         name: '',
         email: '',
+        countryCode: '+91',
         phone: '',
         service: '',
         message: ''
