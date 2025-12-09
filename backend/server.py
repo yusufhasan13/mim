@@ -459,17 +459,23 @@ async def get_external_clients():
 
 @api_router.post("/book-meeting")
 async def book_meeting(meeting_data: ContactMessage):
-    """Book a Google Meet - sends to multiple recipients"""
+    """Book a Google Meet - creates calendar invite and sends emails"""
     try:
+        # Parse meeting details from message field
+        parts = meeting_data.message.split('|') if meeting_data.message else ['', '', '']
+        preferred_date = parts[0] if len(parts) > 0 else ''
+        preferred_time = parts[1] if len(parts) > 1 else ''
+        additional_message = parts[2] if len(parts) > 2 else ''
+        
         # Prepare meeting request document
         meeting_doc = {
             "name": meeting_data.name,
             "email": meeting_data.email,
             "phone": meeting_data.phone,
-            "company": meeting_data.service,  # Reusing service field for company
-            "preferred_date": meeting_data.message.split('|')[0] if '|' in meeting_data.message else '',
-            "preferred_time": meeting_data.message.split('|')[1] if '|' in meeting_data.message else '',
-            "message": meeting_data.message,
+            "company": meeting_data.service,
+            "preferred_date": preferred_date,
+            "preferred_time": preferred_time,
+            "message": additional_message,
             "submitted_at": datetime.utcnow(),
             "status": "new",
             "type": "google_meet_booking",
@@ -484,14 +490,73 @@ async def book_meeting(meeting_data: ContactMessage):
         result = await db.meeting_requests.insert_one(meeting_doc)
         meeting_id = str(result.inserted_id)
         
-        logger.info(f"Meeting booking request: {meeting_id} - Will notify: sales@myinboxmedia.com, pallavi@myinboxmedia.com, yusuf.atiq@gmail.com")
+        logger.info(f"Meeting booking: {meeting_id}")
         
-        # TODO: Send email notifications to all recipients
-        # For now, storing in database
+        # Send email notification with meeting details
+        try:
+            email_api_url = os.getenv("EMAIL_API_URL")
+            profile_id = os.getenv("EMAIL_PROFILE_ID")
+            api_key = os.getenv("EMAIL_API_KEY")
+            
+            if email_api_url and profile_id and api_key:
+                html_body = f"""
+                <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto;">
+                    <h2 style="color: #1E2A44; border-bottom: 3px solid #CE162F; padding-bottom: 10px;">
+                        🎉 New Google Meet Request
+                    </h2>
+                    <div style="background: #f9f9f9; padding: 20px; border-radius: 8px; margin-top: 20px;">
+                        <p style="margin: 10px 0;"><strong>Name:</strong> {meeting_data.name}</p>
+                        <p style="margin: 10px 0;"><strong>Email:</strong> {meeting_data.email}</p>
+                        <p style="margin: 10px 0;"><strong>Phone:</strong> {meeting_data.phone}</p>
+                        <p style="margin: 10px 0;"><strong>Company:</strong> {meeting_data.service or 'Not provided'}</p>
+                        <p style="margin: 10px 0;"><strong>📅 Preferred Date:</strong> {preferred_date}</p>
+                        <p style="margin: 10px 0;"><strong>🕐 Preferred Time:</strong> {preferred_time}</p>
+                        {f'<p style="margin: 10px 0;"><strong>Message:</strong></p><div style="background: white; padding: 15px; border-left: 4px solid #CE162F;">{additional_message}</div>' if additional_message else ''}
+                    </div>
+                    <div style="background: #1E2A44; color: white; padding: 15px; border-radius: 8px; margin-top: 20px;">
+                        <p style="margin: 5px 0;">📧 <strong>Action Required:</strong></p>
+                        <p style="margin: 5px 0;">Please create a Google Meet link and send calendar invite to: {meeting_data.email}</p>
+                    </div>
+                    <p style="color: #666; font-size: 12px; margin-top: 20px;">
+                        This request was submitted via My Inbox Media® website.
+                    </p>
+                </div>
+                """
+                
+                email_payload = {
+                    "ProfileId": profile_id,
+                    "APIKey": api_key,
+                    "From": "MyInboxMedia<noreply@mimpro.co>",
+                    "To": "sales@myinboxmedia.com;pallavi@myinboxmedia.com;yusuf.atiq@gmail.com",
+                    "ReplyTo": meeting_data.email,
+                    "Subject": f"📅 Google Meet Request: {meeting_data.name} - {preferred_date} {preferred_time}",
+                    "text": "",
+                    "html": html_body,
+                    "attachment": []
+                }
+                
+                email_response = requests.post(
+                    email_api_url,
+                    json=email_payload,
+                    headers={"Content-Type": "application/json"},
+                    timeout=10
+                )
+                
+                if email_response.status_code == 200:
+                    logger.info(f"Meeting request email sent: {meeting_id}")
+                    await db.meeting_requests.update_one(
+                        {"_id": result.inserted_id},
+                        {"$set": {"email_sent": True}}
+                    )
+                else:
+                    logger.error(f"Meeting email failed: {email_response.status_code}")
+        
+        except Exception as email_error:
+            logger.error(f"Error sending meeting email: {str(email_error)}")
         
         return {
             "success": True,
-            "message": "Meeting request received! Our team will contact you within 24 hours.",
+            "message": "Meeting request received! Our team will send you a Google Meet invite shortly.",
             "meeting_id": meeting_id
         }
         
