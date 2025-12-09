@@ -3824,18 +3824,20 @@ body::after {
   backdrop-filter: blur(30px) saturate(180%);
   border: 1px solid rgba(30, 42, 68, 0.1);
   border-radius: 32px;
-  padding: clamp(2.5rem, 5vw, 3.5rem);
-  max-width: min(700px, 95vw);
+  padding: clamp(2.5rem, 5vw, 3rem);
+  max-width: min(850px, 92vw);
   width: 100%;
   box-shadow: 
     0 30px 90px rgba(30, 42, 68, 0.25),
     inset 0 1px 2px rgba(255, 255, 255, 0.8);
   position: relative;
+  overflow: hidden;
+  box-sizing: border-box;
 }
 
 .login-popup-header {
   text-align: center;
-  margin-bottom: 3rem;
+  margin-bottom: clamp(2.5rem, 5vh, 3rem);
 }
 
 .login-popup-header h2 {
@@ -3857,6 +3859,8 @@ body::after {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: clamp(1.5rem, 3vw, 2rem);
+  width: 100%;
+  box-sizing: border-box;
 }
 
 @media (max-width: 768px) {
@@ -3870,7 +3874,7 @@ body::after {
   backdrop-filter: blur(20px);
   border: 2px solid rgba(30, 42, 68, 0.1);
   border-radius: 24px;
-  padding: clamp(2rem, 4vw, 2.5rem);
+  padding: clamp(1.5rem, 3vw, 2rem);
   text-align: center;
   text-decoration: none;
   transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
@@ -3880,7 +3884,9 @@ body::after {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 1rem;
+  gap: clamp(0.75rem, 2vh, 1rem);
+  box-sizing: border-box;
+  min-width: 0;
 }
 
 .login-product-card:hover {
@@ -3892,7 +3898,8 @@ body::after {
 }
 
 .login-product-logo {
-  width: 120px;
+  width: 100%;
+  max-width: 180px;
   height: 120px;
   display: flex;
   align-items: center;
@@ -3900,39 +3907,37 @@ body::after {
   margin-bottom: 0.5rem;
 }
 
-.login-product-logo-placeholder {
-  width: 100px;
-  height: 100px;
-  border-radius: 20px;
-  background: linear-gradient(135deg, var(--orange-primary), #E91E45);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  box-shadow: 0 8px 24px rgba(206, 22, 47, 0.3);
+.login-product-logo-img {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+  mix-blend-mode: multiply;
+  filter: contrast(1.1);
 }
 
-.login-product-logo-placeholder span {
-  font-size: 3rem;
-  font-weight: 900;
-  color: white;
+.login-product-name {
   font-family: var(--font-heading);
-}
-
-.login-product-card h3 {
-  font-family: var(--font-heading);
-  font-size: clamp(1.25rem, 3vw, 1.5rem);
+  font-size: clamp(1.125rem, 2.5vw, 1.375rem);
   font-weight: 700;
   color: var(--navy-primary);
   margin: 0;
   letter-spacing: -0.02em;
 }
 
-.login-product-card p {
+.login-product-desc {
   color: var(--glass-text-muted);
-  font-size: clamp(0.9rem, 2vw, 1rem);
+  font-size: clamp(0.875rem, 2vw, 0.95rem);
   margin: 0;
+  line-height: 1.4;
 }
 
-.login-product-card:hover h3 {
+.login-product-card:hover .login-product-name {
   color: var(--orange-primary);
+}
+
+@media (max-width: 768px) {
+  .login-product-logo {
+    max-width: 160px;
+    height: 100px;
+  }
 }
