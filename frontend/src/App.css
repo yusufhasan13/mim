@@ -3686,3 +3686,134 @@ body::after {
   border-color: var(--orange-primary);
   box-shadow: 0 0 0 4px rgba(206, 22, 47, 0.1);
 }
+
+/* Modern Date Picker */
+.custom-date-picker {
+  position: relative;
+  width: 100%;
+}
+
+.date-picker-button {
+  width: 100%;
+  padding: 1rem 1.25rem;
+  background: rgba(255, 255, 255, 0.9);
+  border: 2px solid rgba(30, 42, 68, 0.2);
+  border-radius: 16px;
+  font-family: var(--font-system);
+  font-size: 1rem;
+  color: var(--glass-text);
+  text-align: left;
+  cursor: pointer;
+  transition: all 0.3s;
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  box-sizing: border-box;
+}
+
+.date-picker-button:hover {
+  border-color: rgba(30, 42, 68, 0.3);
+  background: rgba(255, 255, 255, 1);
+}
+
+.calendar-dropdown {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  margin-top: 0.5rem;
+  background: white;
+  border-radius: 20px;
+  box-shadow: 0 20px 60px rgba(30, 42, 68, 0.25);
+  z-index: 1000;
+  padding: 1.5rem;
+  border: 1px solid rgba(30, 42, 68, 0.1);
+}
+
+/* Modern Calendar Styling */
+.rdp {
+  --rdp-cell-size: 45px;
+  --rdp-accent-color: #CE162F;
+  --rdp-background-color: rgba(206, 22, 47, 0.1);
+  font-family: var(--font-system);
+}
+
+.rdp-caption {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.rdp-caption_label {
+  font-size: 1.125rem;
+  font-weight: 700;
+  color: var(--navy-primary);
+}
+
+.rdp-nav {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.rdp-nav_button {
+  width: 36px;
+  height: 36px;
+  border-radius: 8px;
+  background: rgba(30, 42, 68, 0.05);
+  border: 1px solid rgba(30, 42, 68, 0.1);
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.rdp-nav_button:hover {
+  background: rgba(206, 22, 47, 0.1);
+  border-color: var(--orange-primary);
+}
+
+.rdp-table {
+  margin-top: 1rem;
+}
+
+.rdp-head_cell {
+  font-weight: 700;
+  font-size: 0.875rem;
+  color: var(--glass-text-muted);
+  padding: 0.5rem;
+}
+
+.rdp-cell {
+  padding: 0.25rem;
+}
+
+.rdp-day {
+  width: 100%;
+  height: 100%;
+  border-radius: 10px;
+  font-weight: 500;
+  border: none;
+  background: transparent;
+  cursor: pointer;
+  transition: all 0.3s;
+  color: var(--navy-primary);
+}
+
+.rdp-day:hover:not(.rdp-day_disabled) {
+  background: rgba(206, 22, 47, 0.1);
+  color: var(--orange-primary);
+}
+
+.day-selected {
+  background: linear-gradient(135deg, var(--orange-primary), #E91E45) !important;
+  color: white !important;
+  font-weight: 700;
+}
+
+.day-today {
+  border: 2px solid var(--orange-primary);
+  font-weight: 700;
+}
+
+.rdp-day_disabled {
+  opacity: 0.3;
+  cursor: not-allowed;
+}
